@@ -13,7 +13,6 @@
 
 #Include %A_ScriptDir%
 #Include maclike.ahk
-#Include folder.ahk
 #Include app.ahk
 #Include tooltip.ahk
 #Include window.ahk

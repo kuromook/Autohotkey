@@ -5,7 +5,7 @@
 *.exe
 *.bak
 *.bk
-*.log
+*.log  
 *.lib
 *~
 _history
