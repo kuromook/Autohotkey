@@ -1,0 +1,15 @@
+*.obj
+*.pdf
+*.jpg
+*.psd
+*.exe
+*.bak
+*.bk
+*.log
+*.lib
+*~
+_history
+
+Lib/
+_Struct/
+AutoHotkey-JSON/

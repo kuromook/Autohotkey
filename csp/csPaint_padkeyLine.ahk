@@ -1,0 +1,1129 @@
+ getDoubleKeyLine(){
+  dbl := new DoubleKey()
+  ; White w
+  dbl.append( new Operation("Common", 16,"j", 1, "{9}", "key"))
+  dbl.append( new Operation("white    ", 16,"i", 2, "{8}", "key"))
+  dbl.append( new Operation("brush"   , 16,"m", 1, "{b}", "key"))
+  dbl.append( new Operation("reverse "  , 16,"x", 2, "_csp_line_reverse_color", "sub"))
+
+  ; Tsuya g
+  dbl.append( new Operation("Kabura", 15,"j", 1, "{F7}", "key"))
+  dbl.append( new Operation("white    ", 1,"i", 2, "{8}", "key"))
+  dbl.append( new Operation("blur"   , 15,"m", 1, "{n}", "key"))
+  dbl.append( new Operation("reverse "  , 15,"x", 2, "_csp_line_reverse_color", "sub"))
+
+  ; decoration (p)
+  dbl.append( new Operation("Kabura", 14,"j", 1, "{a}", "key"))
+  dbl.append( new Operation("white    ", 14,"i", 2, "{8}", "key"))
+  dbl.append( new Operation("blur"   , 14,"m", 1, "{[}", "key"))
+  dbl.append( new Operation("reverse "  , 14,"x", 2, "_csp_line_reverse_color", "sub"))
+  ; Vegetation
+  dbl.append( new Operation("Kabura", 13,"j", 1, "{5}", "key"))
+  dbl.append( new Operation("white    ", 13,"i", 2, "{8}", "key"))
+  dbl.append( new Operation("blur"   , 13,"m", 1, "{6}", "key"))
+  dbl.append( new Operation("reverse "  , 13,"x", 2, "_csp_line_reverse_color", "sub"))
+  ; Effect
+  dbl.append( new Operation("Kabura", 12,"j", 1, "{z}", "key"))
+  dbl.append( new Operation("white    ", 12,"m", 1, "_csp_line_kamiwhite", "sub"))
+  dbl.append( new Operation("white    ", 12,"i", 2, "{8}", "key"))
+  dbl.append( new Operation("reverse "  , 12,"x", 2, "_csp_line_detail", "sub"))
+
+    ;mask
+  dbl.append( new Operation("brush   ", 10,"j", 1, "{l}", "key"))
+  ;dbl.append( new Operation("pencil", 10,"s", 1, "{y}", "key"))
+  ;dbl.append( new Operation("pencil", 10,"s", 2, "{v}", "key"))
+  dbl.append( new Operation("air brush"   , 10,"m", 2, "_csp_line_gradation_confirm", "sub"))
+  dbl.append( new Operation("blur"   , 10,"m", 1, "_csp_line_gradation_tool", "sub"))
+  dbl.append( new Operation("reverse "  , 10,"x", 2, "_csp_reverse_and_gradation", "sub"))
+;  dbl.append( new Operation("layer " , 10,"F17", 1, "_csp_kamibeta" , "sub"))
+;  dbl.append( new Operation("layer " , 10,"F18", 1, "_csp_skin_gradation" , "sub"))
+
+  ;Tone
+  dbl.append( new Operation("Kabura", 9,"j", 1, "{f}", "key"))
+  ;dbl.append( new Operation("Kabura  ", 9,"n", 1, "{e}", "key"))
+  dbl.append( new Operation("Tone     ", 9,"m", 1, "{b}", "key"))
+  dbl.append( new Operation("Tone     ", 9,"m", 2, "csp_shadow_to_gradation", "sub"))
+
+  dbl.append( new Operation("Control", 9,"i", 2, "{q}", "key"))
+  dbl.append( new Operation("wanderace", 9,"n", 1, "_csp_line_curveErace", "sub"))
+  dbl.append( new Operation("wanderace", 9,"n", 2, "_csp_line_curveFillDetail", "sub"))
+
+  ;dbl.append( new Operation("reverse "  , 9,"x", 2, "^{d}", "key"))
+  dbl.append( new Operation("reverse "  , 9,"x", 2, "_csp_line_detail", "sub"))
+    ; fukidasi
+  dbl.append( new Operation("white    ", 8,"j", 1, "_csp_fukidashi_line", "sub"))
+  dbl.append( new Operation("white    ", 8,"i", 2, "{8}", "key"))
+  dbl.append( new Operation("white    ", 8,"m", 1, "_csp_line_kamiwhite", "sub"))
+  ;dbl.append( new Operation("white    ", 8,"w", 2, "{8}", "key"))
+
+  ; common pen flow
+  dbl.append( new Operation("Hair   ", 11,"j", 1, "{F10}", "key"))
+  dbl.append( new Operation("Control", 11,"j", 2, "{F10}", "key"))
+  dbl.append( new Operation("Control", 11,"i", 2, "{q}", "key"))
+  dbl.append( new Operation("view sketch"   , 11,"m", 1, "{F19}", "key"))
+
+  ; construct flow
+  dbl.append( new Operation("Hair   ", 6,"j", 1, "{2}", "key"))
+  dbl.append( new Operation("Control", 6,"j", 2, "{2}", "key"))
+  dbl.append( new Operation("Tone     ", 6,"m", 1, "{F4}", "key"))
+  dbl.append( new Operation("view sketch"   , 6,"m", 2, "_csp_toggle_sketch_view", "sub"))
+  dbl.append( new Operation("Control", 6,"i", 2, "{q}", "key"))
+
+  ; character Main away pen flow
+  dbl.append( new Operation("Hair   ", 3,"j", 1, "{1}", "key"))
+  dbl.append( new Operation("Control", 3,"j", 2, "{1}", "key"))
+  dbl.append( new Operation("Tone     ", 3,"m", 1, "{3}", "key"))
+  dbl.append( new Operation("view sketch"   , 3,"m", 2, "b", "key"))
+  dbl.append( new Operation("Control", 3,"i", 2, "{q}", "key"))
+
+  ; hair pen flow
+  dbl.append( new Operation("Hair   ", 5,"j", 1, "{j}", "key"))
+  dbl.append( new Operation("Control", 5,"j", 2, "{j}", "key"))
+  dbl.append( new Operation("Control", 5,"i", 2, "{q}", "key"))
+
+  ; character main flow
+  dbl.append( new Operation("Maru  ", 2,"j", 1, "{F10}", "key"))
+  dbl.append( new Operation("Control", 2,"j", 2, "{F10}", "key"))
+  dbl.append( new Operation("Control", 2,"i", 2, "{q}", "key"))
+    dbl.append( new Operation("Optio", 2,"m", 1, "{Ctrl}", "key"))
+  ; Hair pen Coarse flow
+  dbl.append( new Operation("Free   ", 4,"j", 1, "{k}", "key"))
+  dbl.append( new Operation("Free   ", 4,"j", 2, "{k}", "key"))
+  dbl.append( new Operation("Control", 4,"i", 2, "{q}", "key"))
+
+  ; character Up flow
+  dbl.append( new Operation("Control", 1,"j", 1, "{9}", "key"))
+  dbl.append( new Operation("Control", 1,"j", 2, "{p}", "key"))
+  dbl.append( new Operation("Control", 1,"i", 2, "{q}", "key"))
+
+
+  ; default action (and without flow setting)
+  dbl.append( new Operation("Pen"   , 0,"j", 1, "{9}", "key"))
+  dbl.append( new Operation("wanderace", 0,"n", 1, "_csp_line_curveErace", "sub"))
+  dbl.append( new Operation("wanderace", 0,"n", 2, "_csp_line_curveFillDetail", "sub"))
+  ;dbl.append( new Operation("view sketch"   , 0,"m", 1, "_csp_line_maru", "sub"))
+  ;dbl.append( new Operation("view sketch"   , 0,"m", 2, "_csp_toggle_sketch_view", "sub"))
+  ;dbl.append( new Operation("view sketch"   , 0,"m", 2, "^{F14}", "key"))
+    dbl.append( new Operation("select curve", 0,"m", 1, "{F19}", "key"))
+  dbl.append( new Operation("select curve", 0,"s", 1, "{F5}", "key"))
+  dbl.append( new Operation("Confirm", 0,"s", 2, "+{F17} ", "key"))
+  dbl.append( new Operation("fill"  , 0,"i", 2, "{q}", "key"))
+  dbl.append( new Operation("transparent"  , 0,"x", 1, "{x}", "key"))
+  ;dbl.append( new Operation("reverse "  , 0,"x", 2, "_csp_line_detail", "sub"))
+  dbl.append( new Operation("reverse "  , 0,"x", 2, "_csp_change_ruler", "sub"))
+
+
+  dbl.append( new Operation("layer " , 0,"F16", 1, "+^{F16}" , "key"))
+  dbl.append( new Operation("layer " , 0,"F17", 1, "_csp_toggle_sketch_view" , "sub"))
+  dbl.append( new Operation("layer " , 0,"F18", 1, "+^{F18}" , "key"))
+  dbl.append( new Operation("layer " , 0,"F19", 1, "+^{F19}" , "key"))
+  return dbl
+}
+
+_csp_change_ruler:
+send,^{4}
+send,{w}
+return
+
+_csp_toggle_sketch_view:
+  if buf_cspsketch_transparency =1
+  {
+    send, ^+!{F11}
+    buf_cspsketch_transparency:=0
+  }
+  else{
+    send, ^+!{F12}
+    buf_cspsketch_transparency:=1
+  }
+  return
+
+_csp_line_maru:
+send,{3}
+send,{w}
+return
+
+, & .::
+send, ^{8}
+Return
+
+
+
+
++n::
+dbl:=getDoubleKeyLine()
+if A_TickCount < %ctrldoubleN%
+{
+  keys := dbl.byKey("n",buf_CSPFlow, 2)
+  Gosub, _csPaintResetSubTool
+  ctrldoubleN=0
+}
+else
+{
+    ctrldoubleN=%A_TickCount%
+    ctrldoubleN+=400
+    keys := dbl.byKey("n",buf_CSPFlow, 1)
+}
+return
+
++m::
+dbl:=getDoubleKeyLine()
+if A_TickCount < %ctrldoubleM%
+{
+  keys := dbl.byKey("m",buf_CSPFlow, 2)
+  ctrldoubleM=0
+}
+else
+{
+    ctrldoubleM=%A_TickCount%
+    ctrldoubleM+=400
+    if !croquisFlag
+    {
+      keys := dbl.byKey("m",buf_CSPFlow, 1)
+    }
+    else
+    {
+      Send,{e}
+    }
+}
+Return
+
+
++j::
+if buf_csplinelayer =1
+{
+  buf_csplinelayer:=0
+  send,!^+{F15}
+  Return
+}
+dbl:=getDoubleKeyLine()
+if A_TickCount < %ctrldoubleJ%
+{
+  keys := dbl.byKey("j",buf_CSPFlow, 2)
+
+  Gosub, _csPaintResetSubTool
+  ctrldoubleJ=0
+}
+else
+{
+    ctrldoubleJ=%A_TickCount%
+    ctrldoubleJ+=400
+    keys := dbl.byKey("j",buf_CSPFlow, 1)
+
+}
+return
+
+
+
+!F14::
+dbl:=getDoubleKeyLine()
+if A_TickCount < %ctrldoubleS%
+{
+  ;keys := dbl.byKey("s",buf_CSPFlow, 2)
+
+  Gosub, _csp_line_confirm
+  ctrldoubleS=0
+}
+else
+{
+    ctrldoubleS=%A_TickCount%
+    ctrldoubleS+=400
+    Gosub, _csp_line_curve
+    ;keys := dbl.byKey("s",buf_CSPFlow, 1)
+}
+return
+
+
+;~XButton2::RapidHotkey("_csp_line_pen""_csp_rotate",2, 1)
+;~XButton2::
+_csp_line_pen:
+send,{F3}
+  send,{w}
+return
+~Xbutton2::
+_csp_line_rotate:
+if A_TickCount < %ctrldoubleTX%
+{
+  send,{F3}
+  send,{w}
+  ctrldoubleTX=0
+}
+else
+{
+    ctrldoubleTX=%A_TickCount%
+    ctrldoubleTX+=400
+    send,{Xbutton2}
+}
+return
+
+
+_csp_line_detail:
+if (_buf_CSP_line_bkflag)
+{
+  _cspflowFlag(_buf_CSP_line_bkflag)
+dbl:=getDoubleKeyLine()
+dbl.byKey("j",buf_CSPFlow, 1)
+send,{w}
+_buf_CSP_line_bkflag:=
+}
+else{
+  _buf_CSP_line_bkflag :=buf_CSPFlow
+  _cspflowSC("r")
+  dbl:=getDoubleKeyLine()
+  dbl.byKey("j",buf_CSPFlow, 1)
+  send,{w}
+}
+
+Return
+
+_csp_line_curve:
+send,{F5}
+Return
+
+_csp_line_crop:
+send, +{F17}
+return
+
+
+_transform:
+    Send,^{t}
+    ctrldouble=0
+Return
+
+_csp_line_quickmask:
+    Send,{w}
+    Send,{F15}
+Return
+
+_csp_line_confirm:
+  send,{Enter}
+  send,^{d}
+  return
+_csp_line_reverse_color:
+  send,{s}
+  send,{w}
+  Return
+_csp_line_white:
+  send,{s}
+  send,{w}
+  send,{8}
+  return
+_csp_line_kamiwhite:
+  send,{8}
+  send,{s}
+  send,{w}
+  Return
+_csp_fukidashi_line:
+ send,{f}
+ send,{F1}
+ send,{w}
+ return
+_csp_reverse_and_gradation:
+ send,{F15}
+ gosub, _csp_line_gradation_tool
+ Return
+
+_csp_line_gradation_tool:
+  if _buf_CSP_line_gradation{
+    send, %_buf_CSP_line_gradation%
+  }
+  else{
+    send,{y}
+  }
+
+  return
+
+
+_csp_line_curveErace:
+send,{e}
+send,{x}
+Return
+
+_csp_line_curveFill:
+send,{e}
+send,{w}
+Return
+
+_csp_line_curveFillDetail:
+send,{i}
+send,{w}
+Return
+
+_csp_line_gradation_confirm:
+  send,{F17}
+  send,^{d}
+  Gosub, _csp_line_kage
+  Send,{x}
+  return
+
+_csp_kamibeta:
+  send,!{F16}
+   _cspflowSC("r")
+  dbl:=getDoubleKeyLine()
+  dbl.byKey("j",buf_CSPFlow, 1)
+  Send,^+{F14}
+  Send,{w}
+  Return
+
+_csp_skin_gradation:
+  send,^{d}
+  _cspflowSC("l")
+  dbl:=getDoubleKeyLine()
+  dbl.byKey("j",buf_CSPFlow, 1)
+  Send,{w}
+  return
+
+_transform2nd:
+  if(buf_CSPTransform==1){
+    Send,+{Enter}
+    Send,^{d}
+    buf_CSPTransform:=0
+  }else{
+    Send,{7}
+    buf_CSPTransform:=1
+  }
+return
+
+NumpadPgdn::
+send, +{F11}
+send,!{[}
+Return
+
+NumpadEnd::
+send, +{F9}
+send,!{[}
+Return
+
+^+F17::
+  if A_TickCount < %ctrldoubleST%
+  {
+    Send,{CtrlDown}{9}{CtrlUp}
+    Send,{CtrlDown}{8}{CtrlUp}
+
+     ctrldoubleST=0
+   }
+  else
+   {
+    ctrldoubleST=%A_TickCount%
+    ctrldoubleST+=400
+     Send,{CtrlDown}{F16}{CtrlUp}
+   }
+Return
+
+
++i::
+dbl:=getDoubleKeyLine()
+ if A_TickCount < %ctrldoubleI%
+ {
+  keys := dbl.byKey("i",buf_CSPFlow, 2)
+    ctrldoubleI=0
+ }
+ else
+ {
+    ctrldoubleI=%A_TickCount%
+    ctrldoubleI+=400
+    Send,{w}
+ }
+return
+
+
+
+
+
++a::
+if !SizeLockFlag or tempLineFlowbk
+  Send,+{a}
+return
+
+
++d::
+if !SizeLockFlag or tempLineFlowbk
+  Send,+{d}
+return
+
+
++x::
+dbl:=getDoubleKeyLine()
+ if A_TickCount < %ctrldoubleI%
+ {
+  keys := dbl.byKey("x",buf_CSPFlow, 2)
+    ctrldoubleI=0
+ }
+ else
+ {
+    ctrldoubleI=%A_TickCount%
+    ctrldoubleI+=400
+    keys := dbl.byKey("x",buf_CSPFlow, 1)
+ }
+return
+
+!F19::
+Send,{g}
+return
+
+!F18::
+Send,^{t}
+return
+
+!F17::
+Send,{enter}
+Send,^{d}
+return
+
+
+
+
+
+
+NumpadAdd & F19::
+croquisFlag:=!croquisFlag
+return
+
+;F19::
+;SizeLockFlag:=!SizeLockFlag
+;return
+
+o::
+ if A_TickCount < %ctrldoubleO%
+ {
+    Send,{i}                        ;
+    ctrldoubleO=0
+
+ }
+ else
+ {
+    ctrldoubleO=%A_TickCount%
+    ctrldoubleO+=400
+    Send,{o}
+ }
+return
+
+F19::
+send,{F19}
+gosub,csp_line_shadow
+send,^{h}
+return
+
+; Flow script by NumpadDot
+NumpadDot & F16::
+NumpadDel & F16::
+  dbl:=getDoubleKeyLine()
+  keys := dbl.byKey("F16",buf_CSPFlow, 1)
+  return
+
+NumpadDot & F17::
+NumpadDel & F17::
+  dbl:=getDoubleKeyLine()
+  keys := dbl.byKey("F17",buf_CSPFlow, 1)
+  return
+
+NumpadDot & F18::
+NumpadDel & F18::
+  dbl:=getDoubleKeyLine()
+  keys := dbl.byKey("F18",buf_CSPFlow, 1)
+  return
+
+NumpadDot & F19::
+NumpadDel & F19::
+  dbl:=getDoubleKeyLine()
+  keys := dbl.byKey("F19",buf_CSPFlow, 1)
+  return
+
+
+
+; Shadow
+:*:13::
+NumpadDot & Numpad2::
+NumpadDel & NumpadEnd::
+Gosub, _csp_line_kage
+Send,^!{F1}
+Send,+{F13}
+Send,^!{F2}
+Send,^{h}
+  return
+
+csp_line_ao:
+Send,+{F13}
+Send,^!{F10}
+Send,^{h}
+send, {F19}
+send, {F1}
+buf_csplinelayer:=1
+return
+
+:*:14::
+NumpadDot & Numpad3::
+
+Gosub, _csp_line_detail
+Send,^!{F1}
+gosub, csp_line_ao
+  return
+
+
+:*:15::
+Gosub, _csp_line_tsuya
+Send,^!{F1}
+Return
+
+
+:*:23::
+NumpadDot & Numpad5::
+Gosub, _csp_line_kage
+Send,^!{F3}
+Send,+{F13}
+Send,^!{F4}
+Send,^{h}
+  return
+
+:*:24::
+NumpadDot & Numpad6::
+Gosub, _csp_line_detail
+Send,^!{F3}
+gosub, csp_line_ao
+  return
+
+:*:25::
+Gosub, _csp_line_tsuya
+Send,^!{F3}
+Return
+
+:*:33::
+NumpadDot & Numpad8::
+Gosub, _csp_line_kage
+Send,^!{F5}
+Send,+{F13}
+Send,^!{F4}
+Send,^{h}
+  return
+
+; Flow script by NumpadDot
+:*:34::
+NumpadDot & Numpad9::
+Gosub, _csp_line_detail
+Send,^!{F5}
+gosub, csp_line_ao
+  return
+
+:*:35::
+Gosub, _csp_line_tsuya
+Send,^!{F5}
+Return
+
+NumpadDot & Numpad1::
+Send,^!{F11}
+Send,^!{F7}
+return
+
+NumpadDot & Numpad4::
+Send,^!{F11}
+Send,^!{F6}
+Send,+{F13}
+Send,^{h}
+  return
+
+; Flow script by NumpadDot
+:*:43::
+NumpadDot & NumpadClear::
+Gosub, _csp_line_kage
+Send,^!{F9}
+Send,+{F13}
+Send,^!{F8}
+Send,^{h}
+  return
+
+; Flow script by NumpadDot
+:*:44::
+NumpadDot & NumpadDiv::
+Gosub, _csp_line_detail
+Send,^!{F9}
+gosub, csp_line_ao
+  return
+
+:*:45::
+Gosub, _csp_line_tsuya
+Send,^!{F9}
+Return
+
+NumpadDot & NumpadSub::
+send, ^{e}
+Return
+
+NumpadDot & NumpadAdd::
+
+  send ^!{e}
+Return
+
+NumpadDot & NumpadMult::
+send, ^!{F10}
+Return
+
+NumpadDot & NumpadEnter::
+send, !{Delete}
+Return
+
+_csp_line_kage:
+_cspflowSC("s")
+dbl:=getDoubleKeyLine()
+dbl.byKey("j",buf_CSPFlow, 1)
+Send,^+{F14}
+Send,{w}
+return
+
+_csp_line_hairDetail:
+_cspflowSC("f")
+dbl:=getDoubleKeyLine()
+dbl.byKey("j",buf_CSPFlow, 1)
+Send,^+{F14}
+Send,{w}
+Return
+
+
+_csp_line_tsuya:
+_cspflowSC("g")
+dbl:=getDoubleKeyLine()
+dbl.byKey("j",buf_CSPFlow, 1)
+Send,^+{F14}
+Send,{x}
+return
+
+Numpad0 & Numpad7::
+Gosub, _csp_line_hairDetail
+Send,^!{F10}
+Return
+
+:*:11::
+;Numpad0 & Numpad2::
+Gosub, _csp_line_kage
+Send,^!{F1}
+Return
+
+:*:12::
+;Numpad0 & Numpad3::
+csp_shadow_to_gradation:=0
+Gosub, _csp_line_kage
+Send,^!{F2}
+Return
+
+
+
+:*:21::
+Numpad0 & Numpad5::
+Gosub, _csp_line_kage
+Send,^!{F3}
+Return
+
+:*:22::
+Numpad0 & Numpad6::
+csp_shadow_to_gradation:=0
+Gosub, _csp_line_kage
+Send,^!{F4}
+Return
+
+:*:31::
+Numpad0 & Numpad9::
+Gosub, _csp_line_kage
+Send,^!{F5}
+Return
+
+:*:32::
+;Numpad0 & Numpad8::
+csp_shadow_to_gradation:=0
+Gosub, _csp_line_kage
+Send,^!{F4}
+Return
+
+Numpad0 & Numpad4::
+Send,^!{F11}
+Send,^!{F6}
+return
+Numpad0 & Numpad1::
+Send,^!{F11}
+Send,^!{F7}
+
+return
+
+:*:41::
+Numpad0 & NumpadDiv::
+Gosub, _csp_line_kage
+Send,^!{F9}
+Return
+:*:42::
+csp_shadow_to_gradation:=0
+Numpad0 & NumpadClear::
+Gosub, _csp_line_kage
+Send,^!{F8}
+Return
+
+Numpad0 & NumpadEnter::
+Send,{F13}
+Return
+
+
+Numpad0::
+_cspflowSC("r")
+dbl:=getDoubleKeyLine()
+dbl.byKey("j",buf_CSPFlow, 1)
+Send,^+{F14}
+Send,{F1}
+Send,{w}
+_buf_CSP_line_bkflag:=
+return
+
+Numpad4::
+_cspflowSC("u")
+dbl:=getDoubleKeyLine()
+dbl.byKey("j",buf_CSPFlow, 1)
+Send,^+{F14}
+Send,{F1}
+Send,{w}
+_buf_CSP_line_bkflag:=
+return
+
+Numpad2::
+_cspflowSC("c")
+dbl:=getDoubleKeyLine()
+dbl.byKey("j",buf_CSPFlow, 1)
+Send,^+{F14}
+Send,{w}
+send,{f1}
+_buf_CSP_line_bkflag:=
+return
+
+
+
+Numpad1::
+_cspflowSC("m")
+dbl:=getDoubleKeyLine()
+dbl.byKey("j",buf_CSPFlow, 1)
+Send,^+{F14}
+Send,{F1}
+Send,{w}
+_buf_CSP_line_bkflag:=
+return
+
+Numpad5::
+_cspflowSC("h")
+dbl:=getDoubleKeyLine()
+dbl.byKey("j",buf_CSPFlow, 1)
+Send,^+{F14}
+Send,{F1}
+Send,{w}
+_buf_CSP_line_bkflag:=
+return
+
+
+Numpad7::
+_cspflowSC("a")
+dbl:=getDoubleKeyLine()
+dbl.byKey("j",buf_CSPFlow, 1)
+Send,^+{F14}
+Send,{F1}
+Send,{w}
+_buf_CSP_line_bkflag:=
+return
+
+Numpad8::
+_cspflowSC("f")
+dbl:=getDoubleKeyLine()
+dbl.byKey("j",buf_CSPFlow, 1)
+Send,^+{F14}
+Send,{F1}
+Send,{w}
+_buf_CSP_line_bkflag:=
+return
+
+
+
+csp_line_liquid:
+_cspflowSC("l")
+dbl:=getDoubleKeyLine()
+dbl.byKey("j",buf_CSPFlow, 1)
+Send,^+{F14}
+Send,{w}
+Send,{F15}
+send,{e}
+_buf_CSP_line_bkflag:=
+return
+
+:*:55::
+send,^!+{e}
+gosub, csp_gradation_nip
+Return
+
+:*:055::
+csp_gradation_nip:
+_buf_CSP_line_gradation:="{y}"
+send,^{d}
+gosub, csp_line_liquid
+Return
+
+:*:51::
+send,^!+{e}
+gosub, csp_gradation_dark
+Return
+
+:*:051::
+csp_gradation_dark:
+_buf_CSP_line_gradation:="{d}"
+send,^{d}
+gosub, csp_line_liquid
+Return
+
+:*:52::
+send,^!+{e}
+gosub, csp_gradation_light
+Return
+
+:*:052::
+csp_gradation_light:
+_buf_CSP_line_gradation:="{7}"
+send,^{d}
+gosub, csp_line_liquid
+Return
+
+:*:53::
+send,^!+{e}
+gosub, csp_gradation_round
+Return
+
+:*:053::
+csp_gradation_round:
+_buf_CSP_line_gradation:="{F11}"
+send,^{d}
+gosub, csp_line_liquid
+Return
+
+
+:*:66::
+gosub, csp_line_decoration
+Return
+
+csp_line_decoration:
+_cspflowSC("p")
+dbl:=getDoubleKeyLine()
+dbl.byKey("j",buf_CSPFlow, 1)
+Send,^+{F14}
+Send,{F1}
+Send,^!{F16}
+Send,{w}
+_buf_CSP_line_bkflag:=
+return
+
+:*:77::
+gosub, csp_line_Vegetation
+Return
+
+csp_line_Vegetation:
+_cspflowSC("j")
+dbl:=getDoubleKeyLine()
+dbl.byKey("j",buf_CSPFlow, 1)
+Send,^+{F14}
+Send,{F1}
+Send,^!{F16}
+Send,{w}
+_buf_CSP_line_bkflag:=
+return
+
+:*:88::
+gosub, csp_line_Regular
+Return
+
+csp_line_Regular:
+_cspflowSC("r")
+Send,{9}
+Send,^+{F14}
+Send,{F1}
+Send,^!{F16}
+Send,{w}
+_buf_CSP_line_bkflag:=
+return
+
+:*:99::
+gosub, csp_line_Fruid
+Return
+
+csp_line_Fruid:
+_cspflowSC("g")
+dbl:=getDoubleKeyLine()
+dbl.byKey("j",buf_CSPFlow, 1)
+Send,^+{F14}
+Send,{F1}
+Send,^!{F16}
+Send,{w}
+_buf_CSP_line_bkflag:=
+return
+
+csp_line_shadow:
+Numpad6::
+_cspflowSC("s")
+dbl:=getDoubleKeyLine()
+dbl.byKey("j",buf_CSPFlow, 1)
+Send,^+{F14}
+Send,{F1}
+Send,{w}
+_buf_CSP_line_bkflag:=
+return
+
+Numpad9::
+_cspflowSC("b")
+dbl:=getDoubleKeyLine()
+dbl.byKey("j",buf_CSPFlow, 1)
+Send,^+{F14}
+Send,{F1}
+Send,{w}
+_buf_CSP_line_bkflag:=
+return
+
+NumpadEnter & Numpad6::
+_cspflowSC("e")
+dbl:=getDoubleKeyLine()
+dbl.byKey("j",buf_CSPFlow, 1)
+Send,^+{F14}
+Send,{w}
+Send, ^{F2}
+Send,{F1}
+_buf_CSP_line_bkflag:=
+send,{F8}
+return
+
+NumpadEnter & Numpad9::
+_cspflowSC("b")
+dbl:=getDoubleKeyLine()
+dbl.byKey("j",buf_CSPFlow, 1)
+Send,^+{F14}
+Send,{w}
+Send, ^{F1}
+Send,{F1}
+_buf_CSP_line_bkflag:=
+return
+
+
+NumpadEnter & Numpad4::
+Send,{F16}
+send,^+!{F1}
+_cspflowSC("m")
+dbl:=getDoubleKeyLine()
+dbl.byKey("j",buf_CSPFlow, 1)
+Send,^+{F14}
+Send,{F1}
+Send,{w}
+sleep,100
+send,^!+{j}
+send,^!+{i}
+_buf_CSP_line_bkflag:=
+return
+
+NumpadEnter & Numpad2::
+Send,{F16}
+send,^+!{F2}
+_cspflowSC("c")
+dbl:=getDoubleKeyLine()
+dbl.byKey("j",buf_CSPFlow, 1)
+Send,^+{F14}
+Send,{F1}
+Send,{w}
+_buf_CSP_line_bkflag:=
+return
+
+NumpadEnter & Numpad1::
+Send,{F16}
+send,^+!{F1}
+_cspflowSC("m")
+dbl:=getDoubleKeyLine()
+dbl.byKey("j",buf_CSPFlow, 1)
+Send,^+{F14}
+Send,{F1}
+Send,{w}
+Send,{9}
+_buf_CSP_line_bkflag:=
+return
+
+NumpadEnter & Numpad5::
+Send,{F16}
+send,^+!{F2}
+_cspflowSC("h")
+dbl:=getDoubleKeyLine()
+dbl.byKey("j",buf_CSPFlow, 1)
+Send,^+{F14}
+Send,{F1}
+Send,{w}
+_buf_CSP_line_bkflag:=
+return
+
+NumpadEnter & Numpad7::
+Send,{F16}
+send,^+!{F1}
+_cspflowSC("a")
+dbl:=getDoubleKeyLine()
+dbl.byKey("j",buf_CSPFlow, 1)
+Send,^+{F14}
+Send,{F1}
+Send,{w}
+_buf_CSP_line_bkflag:=
+return
+
+NumpadEnter & Numpad8::
+Send,{F16}
+;send,^+!{F2}
+_cspflowSC("f")
+dbl:=getDoubleKeyLine()
+dbl.byKey("j",buf_CSPFlow, 1)
+Send,^+{F14}
+Send,{F1}
+Send,{w}
+_buf_CSP_line_bkflag:=
+return
+
+_csp_line_erotic:
+Send,^!{F16}
+send,^+!{F8}
+_cspflowSC("p")
+dbl:=getDoubleKeyLine()
+dbl.byKey("j",buf_CSPFlow, 1)
+Send,^+{F14}
+Send,{F1}
+Send,{w}
+Send,{s}
+_buf_CSP_line_bkflag:=
+return
+
+NumpadEnter & Numpad3::
+
+_cspflowSC("f")
+dbl:=getDoubleKeyLine()
+dbl.byKey("j",buf_CSPFlow, 1)
+Send,^+{F14}
+Send,{F1}
+Send,^!{F16}
+Send,{w}
+_buf_CSP_line_bkflag:=
+return
+
+:*:66::
+gosub,csp_line_white_layer
+Return
+
+Numpad3::
+Send,^!{F16}
+send,^!{F6}
+csp_line_white_layer:
+_cspflowSC("w")
+dbl:=getDoubleKeyLine()
+dbl.byKey("n",buf_CSPFlow, 1)
+Send,^+{F14}
+Send,{F1}
+Send,{s}
+Send,{w}
+_buf_CSP_line_bkflag:=
+return
+
++End::
+send, ^+{d}
+send,^{h}
+Return
+
+
+csp_shadow_to_gradation:
+    send, ^+!{w}
+    send,^{d}
+
+  return
