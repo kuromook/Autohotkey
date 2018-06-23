@@ -15,7 +15,7 @@
 #Include maclike.ahk
 #Include app.ahk
 #Include tooltip.ahk
-#Include window.ahk
+
 #Include %A_ScriptDir%\csp\csPaint.ahk
 #Include zbrush.ahk
 

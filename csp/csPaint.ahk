@@ -5,14 +5,9 @@ flowJsonFile := %A_ScriptDir% . "\csp\flow.json"
 
 #Include %A_ScriptDir%\csp\csPaint_func.ahk
 #Include %A_ScriptDir%\csp\csPaint_funcGroup.ahk
-;#Include %A_ScriptDir%\csp\csPaint_LayerRenamer.ahk
+
 
 SetTitleMatchMode,2
-
-;LWin::
-;Suspend,Permit
-;Return
-
 
 global buf_CSPMode
 global buf_CSPFlow
