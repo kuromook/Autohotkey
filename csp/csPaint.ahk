@@ -60,8 +60,7 @@ return (WinActive("CLIP STUDIO PAINT") or WinActive("ahk_class 742DEA58-ED6B-440
 #IncludeAgain %A_ScriptDir%\csp\csPaint_textpropertyShortInput.ahk
 #Include %A_ScriptDir%\csp\csPaint_speeddialStoryboard.ahk
 
-#If csPaintWindows() and (buf_CSPMode == 6) and !(IME_IsON(WinExist("A")))
-#Include %A_ScriptDir%\csp\csPaint_padkeyOnomatopeia.ahk
+
 
 
 #If csPaintWindows() and (buf_CSPMode == 5) and !(IME_IsON(WinExist("A")))
@@ -79,9 +78,7 @@ return (WinActive("CLIP STUDIO PAINT") or WinActive("ahk_class 742DEA58-ED6B-440
 
 #If csPaintWindows() and (buf_CSPMode == 2) and !(IME_IsON(WinExist("A")))
 #Include %A_ScriptDir%\csp\csPaint_padkeyLine.ahk
-;#Include %A_ScriptDir%\csp\csPaint_renameLine.ahk
 #Include %A_ScriptDir%\csp\csPaint_kbdLine.ahk
-;#IncludeAgain %A_ScriptDir%\csp\csPaint_speeddial.ahk
 
 #If csPaintWindows() and (buf_CSPMode == 2) and (IME_IsON(WinExist("A")))
 #Include %A_ScriptDir%\csp\csPaint_padkeyLine.ahk

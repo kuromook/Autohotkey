@@ -152,7 +152,7 @@ class Flow
     }
 
     message(){
-      mesHash:={"onomatopoeia":"Onomatopeia","base":"base","character":"Character","lineart":"Line", "environment":"Environment"}
+      mesHash:={"base":"base","character":"Character","lineart":"Line", "environment":"Environment"}
 
       mode:=this.mode
       modeName:=mesHash[mode]

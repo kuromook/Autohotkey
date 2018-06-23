@@ -132,30 +132,6 @@ C-g : Clip Layer
 return
 
 
-_CSPModeOnomatopeia:
-ToolTip,
-(
-Onomatopeia MODE
-Short Cut List
-
-L1 : G Free
-L2 : G Control 
-R1 : Hair pen
-R2 : Kabura
-
-*double to reset pen
-
-Select : Reset View
-Start : Transform
--------------------
-F16 : W edge
-F17 : B-> W
-F18 : B-> W  + B edge
-F19 : B-> T + B edge
-)
-,10,60,12
-return
-
 
 _CSPModeLineart:
 ToolTip,
