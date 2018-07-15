@@ -214,15 +214,6 @@ dbl:=getDoubleKeyPaint()
  }
 return
 
-;~!F14::RapidHotkey("_csp_paint_curve""_csp_paint_second""_csp_paint_confirm",1, 0.22 , 1)
-
-~!+F14::RapidHotkey("_csp_paint_undo""_csp_line_curveErace""_csp_line_undo",2, 0.3, 1)
-_csp_paint_undo:
-send,{i}
-Return
-
-
-
 _csp_pencil_flag:
 if(!pencil_flag)
 {
