@@ -42,7 +42,6 @@ return (WinActive("CLIP STUDIO PAINT") or WinActive("ahk_class 742DEA58-ED6B-440
 #Include %A_ScriptDir%\csp\csPaint_makePaintLayer.ahk
 #Include %A_ScriptDir%\csp\csPaint_selectColor.ahk
 
-;#Include %A_ScriptDir%\numpadFunc.ahk
 
 #If csPaintWindows() and (buf_CSPMode == 9) and !(IME_IsON(WinExist("A")))
 #Include %A_ScriptDir%\csp\csPaint_padkeyEnvironment.ahk

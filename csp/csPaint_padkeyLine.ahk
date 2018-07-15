@@ -36,7 +36,7 @@
 
 
   ;Tone
-  dbl.append( new Operation("Kabura", 9,"j", 1, "{f}", "key"))
+  dbl.append( new Operation("Kabura", 9,"j", 1, "{F10}", "key"))
   ;dbl.append( new Operation("Kabura  ", 9,"n", 1, "{e}", "key"))
   dbl.append( new Operation("Tone     ", 9,"m", 1, "{b}", "key"))
   dbl.append( new Operation("Tone     ", 9,"m", 2, "csp_shadow_to_gradation", "sub"))
@@ -460,14 +460,6 @@ return
 
 
 
-NumpadAdd & F19::
-croquisFlag:=!croquisFlag
-return
-
-;F19::
-;SizeLockFlag:=!SizeLockFlag
-;return
-
 o::
  if A_TickCount < %ctrldoubleO%
  {
@@ -483,36 +475,6 @@ o::
  }
 return
 
-F19::
-send,{F19}
-gosub,csp_line_shadow
-send,^{h}
-return
-
-; Flow script by NumpadDot
-NumpadDot & F16::
-NumpadDel & F16::
-  dbl:=getDoubleKeyLine()
-  keys := dbl.byKey("F16",buf_CSPFlow, 1)
-  return
-
-NumpadDot & F17::
-NumpadDel & F17::
-  dbl:=getDoubleKeyLine()
-  keys := dbl.byKey("F17",buf_CSPFlow, 1)
-  return
-
-NumpadDot & F18::
-NumpadDel & F18::
-  dbl:=getDoubleKeyLine()
-  keys := dbl.byKey("F18",buf_CSPFlow, 1)
-  return
-
-NumpadDot & F19::
-NumpadDel & F19::
-  dbl:=getDoubleKeyLine()
-  keys := dbl.byKey("F19",buf_CSPFlow, 1)
-  return
 
 
 
