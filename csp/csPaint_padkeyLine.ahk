@@ -6,22 +6,6 @@
   dbl.append( new Operation("brush"   , 16,"m", 1, "{b}", "key"))
   dbl.append( new Operation("reverse "  , 16,"x", 2, "_csp_line_reverse_color", "sub"))
 
-  ; Tsuya g
-  dbl.append( new Operation("Kabura", 15,"j", 1, "{F7}", "key"))
-  dbl.append( new Operation("white    ", 1,"i", 2, "{8}", "key"))
-  dbl.append( new Operation("blur"   , 15,"m", 1, "{n}", "key"))
-  dbl.append( new Operation("reverse "  , 15,"x", 2, "_csp_line_reverse_color", "sub"))
-
-  ; decoration (p)
-  dbl.append( new Operation("Kabura", 14,"j", 1, "{a}", "key"))
-  dbl.append( new Operation("white    ", 14,"i", 2, "{8}", "key"))
-  dbl.append( new Operation("blur"   , 14,"m", 1, "{[}", "key"))
-  dbl.append( new Operation("reverse "  , 14,"x", 2, "_csp_line_reverse_color", "sub"))
-  ; Vegetation
-  dbl.append( new Operation("Kabura", 13,"j", 1, "{5}", "key"))
-  dbl.append( new Operation("white    ", 13,"i", 2, "{8}", "key"))
-  dbl.append( new Operation("blur"   , 13,"m", 1, "{6}", "key"))
-  dbl.append( new Operation("reverse "  , 13,"x", 2, "_csp_line_reverse_color", "sub"))
   ; Effect
   dbl.append( new Operation("Kabura", 12,"j", 1, "{z}", "key"))
   dbl.append( new Operation("white    ", 12,"m", 1, "_csp_line_kamiwhite", "sub"))
@@ -37,7 +21,6 @@
 
   ;Tone
   dbl.append( new Operation("Kabura", 9,"j", 1, "{F10}", "key"))
-  ;dbl.append( new Operation("Kabura  ", 9,"n", 1, "{e}", "key"))
   dbl.append( new Operation("Tone     ", 9,"m", 1, "{b}", "key"))
   dbl.append( new Operation("Tone     ", 9,"m", 2, "csp_shadow_to_gradation", "sub"))
 
@@ -45,43 +28,14 @@
   dbl.append( new Operation("wanderace", 9,"n", 1, "_csp_line_curveErace", "sub"))
   dbl.append( new Operation("wanderace", 9,"n", 2, "_csp_line_curveFillDetail", "sub"))
 
-  ;dbl.append( new Operation("reverse "  , 9,"x", 2, "^{d}", "key"))
   dbl.append( new Operation("reverse "  , 9,"x", 2, "_csp_line_detail", "sub"))
+
     ; fukidasi
   dbl.append( new Operation("white    ", 8,"j", 1, "_csp_fukidashi_line", "sub"))
   dbl.append( new Operation("white    ", 8,"i", 2, "{8}", "key"))
   dbl.append( new Operation("white    ", 8,"m", 1, "_csp_line_kamiwhite", "sub"))
 
 
-  ; common pen flow
-  dbl.append( new Operation("Hair   ", 11,"j", 1, "{F10}", "key"))
-  dbl.append( new Operation("Control", 11,"j", 2, "{F10}", "key"))
-  dbl.append( new Operation("Control", 11,"i", 2, "{q}", "key"))
-
-  ; construct flow
-  dbl.append( new Operation("Hair   ", 6,"j", 1, "{2}", "key"))
-  dbl.append( new Operation("Control", 6,"j", 2, "{2}", "key"))
-  dbl.append( new Operation("Control", 6,"i", 2, "{q}", "key"))
-
-  ; character Main away pen flow
-  dbl.append( new Operation("Hair   ", 3,"j", 1, "{1}", "key"))
-  dbl.append( new Operation("Control", 3,"j", 2, "{1}", "key"))
-  dbl.append( new Operation("Control", 3,"i", 2, "{q}", "key"))
-
-  ; hair pen flow
-  dbl.append( new Operation("Hair   ", 5,"j", 1, "{j}", "key"))
-  dbl.append( new Operation("Control", 5,"j", 2, "{j}", "key"))
-  dbl.append( new Operation("Control", 5,"i", 2, "{q}", "key"))
-
-  ; character main flow
-  dbl.append( new Operation("Maru  ", 2,"j", 1, "{F10}", "key"))
-  dbl.append( new Operation("Control", 2,"j", 2, "{F10}", "key"))
-  dbl.append( new Operation("Control", 2,"i", 2, "{q}", "key"))
-
-  ; Hair pen Coarse flow
-  dbl.append( new Operation("Free   ", 4,"j", 1, "{k}", "key"))
-  dbl.append( new Operation("Free   ", 4,"j", 2, "{k}", "key"))
-  dbl.append( new Operation("Control", 4,"i", 2, "{q}", "key"))
 
   ; character Up flow
   dbl.append( new Operation("Control", 1,"j", 1, "{9}", "key"))
@@ -442,22 +396,6 @@ dbl:=getDoubleKeyLine()
  }
 return
 
-!F19::
-Send,{g}
-return
-
-!F18::
-Send,^{t}
-return
-
-!F17::
-Send,{enter}
-Send,^{d}
-return
-
-
-
-
 
 
 o::
@@ -529,10 +467,6 @@ Send,^!{F3}
 gosub, csp_line_ao
   return
 
-:*:25::
-Gosub, _csp_line_tsuya
-Send,^!{F3}
-Return
 
 :*:33::
 NumpadDot & Numpad8::
@@ -551,10 +485,6 @@ Send,^!{F5}
 gosub, csp_line_ao
   return
 
-:*:35::
-Gosub, _csp_line_tsuya
-Send,^!{F5}
-Return
 
 NumpadDot & Numpad1::
 Send,^!{F11}
@@ -586,10 +516,6 @@ Send,^!{F9}
 gosub, csp_line_ao
   return
 
-:*:45::
-Gosub, _csp_line_tsuya
-Send,^!{F9}
-Return
 
 NumpadDot & NumpadSub::
 send, ^{e}
@@ -624,14 +550,6 @@ Send,^+{F14}
 Send,{w}
 Return
 
-
-_csp_line_tsuya:
-_cspflowSC("g")
-dbl:=getDoubleKeyLine()
-dbl.byKey("j",buf_CSPFlow, 1)
-Send,^+{F14}
-Send,{x}
-return
 
 Numpad0 & Numpad7::
 Gosub, _csp_line_hairDetail
@@ -770,65 +688,6 @@ gosub, csp_line_liquid
 Return
 
 
-:*:66::
-gosub, csp_line_decoration
-Return
-
-csp_line_decoration:
-_cspflowSC("p")
-dbl:=getDoubleKeyLine()
-dbl.byKey("j",buf_CSPFlow, 1)
-Send,^+{F14}
-Send,{F1}
-Send,^!{F16}
-Send,{w}
-_buf_CSP_line_bkflag:=
-return
-
-:*:77::
-gosub, csp_line_Vegetation
-Return
-
-csp_line_Vegetation:
-_cspflowSC("j")
-dbl:=getDoubleKeyLine()
-dbl.byKey("j",buf_CSPFlow, 1)
-Send,^+{F14}
-Send,{F1}
-Send,^!{F16}
-Send,{w}
-_buf_CSP_line_bkflag:=
-return
-
-:*:88::
-gosub, csp_line_Regular
-Return
-
-csp_line_Regular:
-_cspflowSC("r")
-Send,{9}
-Send,^+{F14}
-Send,{F1}
-Send,^!{F16}
-Send,{w}
-_buf_CSP_line_bkflag:=
-return
-
-:*:99::
-gosub, csp_line_Fruid
-Return
-
-csp_line_Fruid:
-_cspflowSC("g")
-dbl:=getDoubleKeyLine()
-dbl.byKey("j",buf_CSPFlow, 1)
-Send,^+{F14}
-Send,{F1}
-Send,^!{F16}
-Send,{w}
-_buf_CSP_line_bkflag:=
-return
-
 csp_line_shadow:
 Numpad6::
 _cspflowSC("s")
@@ -950,18 +809,6 @@ Send,{w}
 _buf_CSP_line_bkflag:=
 return
 
-_csp_line_erotic:
-Send,^!{F16}
-send,^+!{F8}
-_cspflowSC("p")
-dbl:=getDoubleKeyLine()
-dbl.byKey("j",buf_CSPFlow, 1)
-Send,^+{F14}
-Send,{F1}
-Send,{w}
-Send,{s}
-_buf_CSP_line_bkflag:=
-return
 
 NumpadEnter & Numpad3::
 
@@ -975,9 +822,6 @@ Send,{w}
 _buf_CSP_line_bkflag:=
 return
 
-:*:66::
-gosub,csp_line_white_layer
-Return
 
 Numpad3::
 Send,^!{F16}
