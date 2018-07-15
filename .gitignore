@@ -13,3 +13,5 @@ _history
 Lib/
 _Struct/
 AutoHotkey-JSON/
+
+.vscode/
