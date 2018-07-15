@@ -25,7 +25,6 @@ return (WinActive("CLIP STUDIO PAINT") or WinActive("ahk_class 742DEA58-ED6B-440
 ;常に使用
 #If, csPaintWindows()
 #Include %A_ScriptDir%\csp\csPaint_main.ahk
-#Include %A_ScriptDir%\csp\csPaint_string.ahk
 #Include %A_ScriptDir%\csp\csPaint_mode.ahk
 #Include %A_ScriptDir%\csp\csPaint_flow.ahk
 #Include %A_ScriptDir%\csp\csPaint_tooltip.ahk
@@ -36,7 +35,6 @@ return (WinActive("CLIP STUDIO PAINT") or WinActive("ahk_class 742DEA58-ED6B-440
 #If csPaintWindows() and (buf_CSPMode == 10 or buf_CSPMode == 11) and !(IME_IsON(WinExist("A")))
 #Include %A_ScriptDir%\csp\csPaint_padkeyPaint.ahk
 #Include %A_ScriptDir%\csp\csPaint_flowPaint.ahk
-#Include %A_ScriptDir%\csp\csPaint_kbdPaint.ahk
 #Include %A_ScriptDir%\csp\csPaint_makePaintLayer.ahk
 #Include %A_ScriptDir%\csp\csPaint_selectColor.ahk
 
