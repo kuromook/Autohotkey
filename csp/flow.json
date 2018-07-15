@@ -165,42 +165,6 @@
             },
 
 
-    	"Lineart_i":{
-    		"name":"Lineart",
-    		"key":"l",
-    		"mode":"dustpan",
-    		"flag":1,
-    		"doc":"http:www.google.com",
-    		"movie":"e:\\video\\CSP\\CSP_line_face.avi",
-    		"msg":"import"
-    		},
-    	"Background_i":{
-    		"name":"Background",
-    		"key":"b",
-    		"mode":"dustpan",
-    		"flag":2,
-    		"doc":"http:www.yahoo.com",
-    		"movie":"e:\\video\\CSP\\CSP_line_hair.avi",
-    		"msg":"import"},
-    	"Model_i":{
-    		"name":"Model",
-    		"key":"m",
-    		"mode":"dustpan",
-    		"flag":3,
-    		"doc":"http:www.google.com",
-    		"movie":"e:\\video\\CSP\\CSP_line_lash.avi",
-    		"msg":"import"
-    		},
-    	"Sketch_i":{
-    		"name":"Sketch",
-    		"key":"s",
-    		"mode":"dustpan",
-    		"flag":4,
-    		"doc":"http:www.yahoo.com",
-    		"movie":"e:\\video\\CSP\\CSP_line_hair.avi",
-    		"msg":"import"
-    		},
-
         "Sub_b":{
             "name":"Sub",
             "key":"s",
@@ -229,52 +193,6 @@
             "movie":"e:\\video\\CSP\\CSP_line_face.avi",
             "msg":"lineart"
             },
-        "Middle_l":{
-            "name":"main Middle",
-            "key":"m",
-            "mode":"lineart",
-            "flag":2,
-            "doc":"http:www.google.com",
-            "movie":"e:\\video\\CSP\\CSP_line_face.avi",
-            "msg":"lineart"
-            },
-        "Away_l":{
-            "name":"main Away",
-            "key":"a",
-            "mode":"lineart",
-            "flag":3,
-            "doc":"http:www.google.com",
-            "movie":"e:\\video\\CSP\\CSP_line_face.avi",
-            "msg":"lineart"
-            },
-        "Coarse_l":{
-            "name":"Coarse hair",
-            "key":"c",
-            "mode":"lineart",
-            "flag":4,
-            "doc":"http:www.google.com",
-            "movie":"e:\\video\\CSP\\CSP_line_face.avi",
-            "msg":"lineart"
-            },
-        "Hair_l":{
-            "name":"Hair",
-            "key":"h",
-            "mode":"lineart",
-            "flag":5,
-            "doc":"http:www.google.com",
-            "movie":"e:\\video\\CSP\\CSP_line_face.avi",
-            "msg":"lineart"
-            },
-        "Construct_l":{
-            "name":"Construct",
-            "key":"f",
-            "mode":"lineart",
-            "flag":6,
-            "doc":"http:www.google.com",
-            "movie":"e:\\video\\CSP\\CSP_line_face.avi",
-            "msg":"lineart"
-            },
-
         "Balloon_l":{
             "name":"fukidashi Ballon",
             "key":"b",
@@ -304,47 +222,11 @@
             "msg":"lineart"
             },
 
-        "Effect_l":{
-            "name":"effect Erotic",
-            "key":"e",
-            "mode":"lineart",
-            "flag":12,
-            "doc":"http:www.google.com",
-            "movie":"e:\\video\\CSP\\CSP_line_lash.avi",
-            "msg":"lineart"
-            },
         "Common_l":{
             "name":"Common",
             "key":"r",
             "mode":"lineart",
             "flag":11,
-            "doc":"http:www.google.com",
-            "movie":"e:\\video\\CSP\\CSP_line_lash.avi",
-            "msg":"lineart"
-            },
-        "Vegetation_l":{
-            "name":"Vegetation",
-            "key":"j",
-            "mode":"lineart",
-            "flag":13,
-            "doc":"http:www.google.com",
-            "movie":"e:\\video\\CSP\\CSP_line_lash.avi",
-            "msg":"lineart"
-            },
-        "Decoration_l":{
-            "name":"Decoration",
-            "key":"p",
-            "mode":"lineart",
-            "flag":14,
-            "doc":"http:www.google.com",
-            "movie":"e:\\video\\CSP\\CSP_line_lash.avi",
-            "msg":"lineart"
-            },
-        "Tshuya_l":{
-            "name":"Tsuya",
-            "key":"g",
-            "mode":"lineart",
-            "flag":15,
             "doc":"http:www.google.com",
             "movie":"e:\\video\\CSP\\CSP_line_lash.avi",
             "msg":"lineart"

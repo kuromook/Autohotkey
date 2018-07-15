@@ -445,10 +445,6 @@ gosub, csp_line_ao
   return
 
 
-:*:15::
-Gosub, _csp_line_tsuya
-Send,^!{F1}
-Return
 
 
 :*:23::
