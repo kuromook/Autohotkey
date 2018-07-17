@@ -706,7 +706,7 @@ _buf_CSP_line_bkflag:=
 return
 
 NumpadEnter & Numpad6::
-_cspflowSC("e")
+_cspflowSC("r")
 dbl:=getDoubleKeyLine()
 dbl.byKey("j",buf_CSPFlow, 1)
 Send,^+{F14}
@@ -714,7 +714,6 @@ Send,{w}
 Send, ^{F2}
 Send,{F1}
 _buf_CSP_line_bkflag:=
-send,{F8}
 return
 
 NumpadEnter & Numpad9::
@@ -732,7 +731,7 @@ return
 NumpadEnter & Numpad4::
 Send,{F16}
 send,^+!{F1}
-_cspflowSC("m")
+_cspflowSC("u")
 dbl:=getDoubleKeyLine()
 dbl.byKey("j",buf_CSPFlow, 1)
 Send,^+{F14}
@@ -747,7 +746,7 @@ return
 NumpadEnter & Numpad2::
 Send,{F16}
 send,^+!{F2}
-_cspflowSC("c")
+_cspflowSC("u")
 dbl:=getDoubleKeyLine()
 dbl.byKey("j",buf_CSPFlow, 1)
 Send,^+{F14}
@@ -759,7 +758,7 @@ return
 NumpadEnter & Numpad1::
 Send,{F16}
 send,^+!{F4}
-_cspflowSC("m")
+_cspflowSC("u")
 dbl:=getDoubleKeyLine()
 dbl.byKey("j",buf_CSPFlow, 1)
 Send,^+{F14}
@@ -772,7 +771,7 @@ return
 NumpadEnter & Numpad5::
 Send,{F16}
 send,^+!{F6}
-_cspflowSC("h")
+_cspflowSC("u")
 dbl:=getDoubleKeyLine()
 dbl.byKey("j",buf_CSPFlow, 1)
 Send,^+{F14}
@@ -781,13 +780,11 @@ Send,{w}
 _buf_CSP_line_bkflag:=
 return
 
-NumpadEnter & Numpad7::
-Send,{F16}
-send,^+!{F1}
-_cspflowSC("a")
+NumpadEnter & Numpad0::
+Send,^!{F16}
+_cspflowSC("u")
 dbl:=getDoubleKeyLine()
 dbl.byKey("j",buf_CSPFlow, 1)
-Send,^+{F14}
 Send,{F1}
 Send,{w}
 _buf_CSP_line_bkflag:=
@@ -807,13 +804,12 @@ return
 
 
 NumpadEnter & Numpad3::
-
-_cspflowSC("f")
+_cspflowSC("w")
 dbl:=getDoubleKeyLine()
-dbl.byKey("j",buf_CSPFlow, 1)
+dbl.byKey("n",buf_CSPFlow, 1)
 Send,^+{F14}
 Send,{F1}
-Send,^!{F16}
+Send,{s}
 Send,{w}
 _buf_CSP_line_bkflag:=
 return
