@@ -38,13 +38,13 @@
 
 
   ; character Up flow
-  dbl.append( new Operation("Control", 1,"j", 1, "{9}", "key"))
+  dbl.append( new Operation("Control", 1,"j", 1, "{F10}", "key"))
   dbl.append( new Operation("Control", 1,"j", 2, "{p}", "key"))
   dbl.append( new Operation("Control", 1,"i", 2, "{q}", "key"))
 
 
   ; default action (and without flow setting)
-  dbl.append( new Operation("Pen"   , 0,"j", 1, "{9}", "key"))
+  dbl.append( new Operation("Pen"   , 0,"j", 1, "{F10}", "key"))
   dbl.append( new Operation("wanderace", 0,"n", 1, "_csp_line_curveErace", "sub"))
   dbl.append( new Operation("wanderace", 0,"n", 2, "_csp_line_curveFillDetail", "sub"))
 
@@ -745,7 +745,7 @@ return
 
 NumpadEnter & Numpad2::
 Send,{F16}
-send,^+!{F2}
+send,^+!{F6}
 _cspflowSC("u")
 dbl:=getDoubleKeyLine()
 dbl.byKey("j",buf_CSPFlow, 1)
@@ -764,13 +764,12 @@ dbl.byKey("j",buf_CSPFlow, 1)
 Send,^+{F14}
 Send,{F1}
 Send,{w}
-Send,{9}
 _buf_CSP_line_bkflag:=
 return
 
 NumpadEnter & Numpad5::
 Send,{F16}
-send,^+!{F6}
+send,^+!{F2}
 _cspflowSC("u")
 dbl:=getDoubleKeyLine()
 dbl.byKey("j",buf_CSPFlow, 1)
