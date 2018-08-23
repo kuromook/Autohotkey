@@ -618,7 +618,7 @@ Return
 
 
 csp_line_shadow:
-Numpad6::
+Numpad5::
 _cspflowSC("s")
 dbl:=getDoubleKeyLine()
 dbl.byKey("j",buf_CSPFlow, 1)
@@ -736,7 +736,7 @@ _buf_CSP_line_bkflag:=
 return
 
 
-NumpadEnter & Numpad3::
+Numpad3::
 _cspflowSC("w")
 dbl:=getDoubleKeyLine()
 dbl.byKey("n",buf_CSPFlow, 1)
@@ -747,8 +747,7 @@ Send,{w}
 _buf_CSP_line_bkflag:=
 return
 
-
-Numpad3::
+NumpadEnter & Numpad3::
 Send,^!{F16}
 send,^!{F6}
 csp_line_white_layer:
