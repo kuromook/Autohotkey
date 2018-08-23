@@ -20,7 +20,7 @@
 
 
   ;Tone
-  dbl.append( new Operation("Kabura", 9,"j", 1, "{F10}", "key"))
+  dbl.append( new Operation("Kabura", 9,"j", 1, "{p}", "key"))
   dbl.append( new Operation("Tone     ", 9,"m", 1, "{b}", "key"))
   dbl.append( new Operation("Tone     ", 9,"m", 2, "csp_shadow_to_gradation", "sub"))
 
@@ -38,19 +38,18 @@
 
 
   ; character Up flow
-  dbl.append( new Operation("Control", 1,"j", 1, "{F10}", "key"))
-  dbl.append( new Operation("Control", 1,"j", 2, "{p}", "key"))
+  dbl.append( new Operation("Control", 1,"j", 1, "{p}", "key"))
   dbl.append( new Operation("Control", 1,"i", 2, "{q}", "key"))
 
 
   ; default action (and without flow setting)
-  dbl.append( new Operation("Pen"   , 0,"j", 1, "{F10}", "key"))
+  dbl.append( new Operation("Pen"   , 0,"j", 1, "{p}", "key"))
   dbl.append( new Operation("wanderace", 0,"n", 1, "_csp_line_curveErace", "sub"))
   dbl.append( new Operation("wanderace", 0,"n", 2, "_csp_line_curveFillDetail", "sub"))
 
-  dbl.append( new Operation("select curve", 0,"m", 1, "{b}", "key"))
-  dbl.append( new Operation("select curve", 0,"m", 2, "{F19}", "key"))
-  dbl.append( new Operation("select curve", 0,"s", 1, "{F5}", "key"))
+  dbl.append( new Operation("brush", 0,"m", 1, "{b}", "key"))
+  dbl.append( new Operation("confirm", 0,"m", 2, "{F19}", "key"))
+  dbl.append( new Operation("select curve", 0,"s", 1, "{a}", "key"))
   dbl.append( new Operation("Confirm", 0,"s", 2, "+{F17} ", "key"))
   dbl.append( new Operation("fill"  , 0,"i", 2, "{q}", "key"))
   dbl.append( new Operation("transparent"  , 0,"x", 1, "{x}", "key"))
@@ -216,7 +215,7 @@ else{
 Return
 
 _csp_line_curve:
-send,{F5}
+send,{a}
 Return
 
 _csp_line_crop:
@@ -418,8 +417,6 @@ return
 
 ; Shadow
 :*:13::
-NumpadDot & Numpad2::
-NumpadDel & NumpadEnd::
 Gosub, _csp_line_kage
 Send,^!{F1}
 Send,+{F13}
@@ -437,8 +434,6 @@ buf_csplinelayer:=1
 return
 
 :*:14::
-NumpadDot & Numpad3::
-
 Gosub, _csp_line_detail
 Send,^!{F1}
 gosub, csp_line_ao
@@ -448,7 +443,6 @@ gosub, csp_line_ao
 
 
 :*:23::
-NumpadDot & Numpad5::
 Gosub, _csp_line_kage
 Send,^!{F3}
 Send,+{F13}
@@ -457,7 +451,6 @@ Send,^{h}
   return
 
 :*:24::
-NumpadDot & Numpad6::
 Gosub, _csp_line_detail
 Send,^!{F3}
 gosub, csp_line_ao
@@ -465,7 +458,6 @@ gosub, csp_line_ao
 
 
 :*:33::
-NumpadDot & Numpad8::
 Gosub, _csp_line_kage
 Send,^!{F5}
 Send,+{F13}
@@ -473,30 +465,18 @@ Send,^!{F4}
 Send,^{h}
   return
 
-; Flow script by NumpadDot
+
 :*:34::
-NumpadDot & Numpad9::
 Gosub, _csp_line_detail
 Send,^!{F5}
 gosub, csp_line_ao
   return
 
 
-NumpadDot & Numpad1::
-Send,^!{F11}
-Send,^!{F7}
-return
 
-NumpadDot & Numpad4::
-Send,^!{F11}
-Send,^!{F6}
-Send,+{F13}
-Send,^{h}
-  return
 
-; Flow script by NumpadDot
+
 :*:43::
-NumpadDot & NumpadClear::
 Gosub, _csp_line_kage
 Send,^!{F9}
 Send,+{F13}
@@ -504,31 +484,13 @@ Send,^!{F8}
 Send,^{h}
   return
 
-; Flow script by NumpadDot
 :*:44::
-NumpadDot & NumpadDiv::
 Gosub, _csp_line_detail
 Send,^!{F9}
 gosub, csp_line_ao
   return
 
 
-NumpadDot & NumpadSub::
-send, ^{e}
-Return
-
-NumpadDot & NumpadAdd::
-
-  send ^!{e}
-Return
-
-NumpadDot & NumpadMult::
-send, ^!{F10}
-Return
-
-NumpadDot & NumpadEnter::
-send, !{Delete}
-Return
 
 _csp_line_kage:
 _cspflowSC("s")
@@ -546,20 +508,12 @@ Send,^+{F14}
 Send,{w}
 Return
 
-
-Numpad0 & Numpad7::
-Gosub, _csp_line_hairDetail
-Send,^!{F10}
-Return
-
 :*:11::
-;Numpad0 & Numpad2::
 Gosub, _csp_line_kage
 Send,^!{F1}
 Return
 
 :*:12::
-;Numpad0 & Numpad3::
 csp_shadow_to_gradation:=0
 Gosub, _csp_line_kage
 Send,^!{F2}
@@ -568,59 +522,38 @@ Return
 
 
 :*:21::
-Numpad0 & Numpad5::
 Gosub, _csp_line_kage
 Send,^!{F3}
 Return
 
 :*:22::
-Numpad0 & Numpad6::
 csp_shadow_to_gradation:=0
 Gosub, _csp_line_kage
 Send,^!{F4}
 Return
 
 :*:31::
-Numpad0 & Numpad9::
 Gosub, _csp_line_kage
 Send,^!{F5}
 Return
 
 :*:32::
-;Numpad0 & Numpad8::
 csp_shadow_to_gradation:=0
 Gosub, _csp_line_kage
 Send,^!{F4}
 Return
 
-Numpad0 & Numpad4::
-Send,^!{F11}
-Send,^!{F6}
-return
-Numpad0 & Numpad1::
-Send,^!{F11}
-Send,^!{F7}
 
-return
 
 :*:41::
-Numpad0 & NumpadDiv::
 Gosub, _csp_line_kage
 Send,^!{F9}
 Return
 :*:42::
 csp_shadow_to_gradation:=0
-Numpad0 & NumpadClear::
 Gosub, _csp_line_kage
 Send,^!{F8}
 Return
-
-Numpad0 & NumpadEnter::
-Send,{F13}
-Return
-
-
-
 
 
 
@@ -755,6 +688,16 @@ Send,{w}
 _buf_CSP_line_bkflag:=
 return
 
+Numpad0::
+_cspflowSC("u")
+dbl:=getDoubleKeyLine()
+dbl.byKey("j",buf_CSPFlow, 1)
+Send,^+{F14}
+Send,{F1}
+Send,{w}
+_buf_CSP_line_bkflag:=
+return
+
 NumpadEnter & Numpad1::
 Send,{F16}
 send,^+!{F4}
@@ -779,15 +722,6 @@ Send,{w}
 _buf_CSP_line_bkflag:=
 return
 
-NumpadEnter & Numpad0::
-Send,^!{F16}
-_cspflowSC("u")
-dbl:=getDoubleKeyLine()
-dbl.byKey("j",buf_CSPFlow, 1)
-Send,{F1}
-Send,{w}
-_buf_CSP_line_bkflag:=
-return
 
 NumpadEnter & Numpad8::
 Send,{F16}
