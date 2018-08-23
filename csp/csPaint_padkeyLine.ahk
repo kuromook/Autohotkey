@@ -76,16 +76,10 @@ _csp_toggle_sketch_view:
   }
   return
 
-_csp_line_maru:
-send,{3}
-send,{w}
-return
 
 , & .::
 send, ^{8}
 Return
-
-
 
 
 +n::
@@ -294,14 +288,6 @@ _csp_line_gradation_confirm:
   Send,{x}
   return
 
-_csp_kamibeta:
-  send,!{F16}
-   _cspflowSC("r")
-  dbl:=getDoubleKeyLine()
-  dbl.byKey("j",buf_CSPFlow, 1)
-  Send,^+{F14}
-  Send,{w}
-  Return
 
 _csp_skin_gradation:
   send,^{d}
@@ -322,15 +308,7 @@ _transform2nd:
   }
 return
 
-NumpadPgdn::
-send, +{F11}
-send,!{[}
-Return
 
-NumpadEnd::
-send, +{F9}
-send,!{[}
-Return
 
 ^+F17::
   if A_TickCount < %ctrldoubleST%
@@ -500,13 +478,6 @@ Send,^+{F14}
 Send,{w}
 return
 
-_csp_line_hairDetail:
-_cspflowSC("f")
-dbl:=getDoubleKeyLine()
-dbl.byKey("j",buf_CSPFlow, 1)
-Send,^+{F14}
-Send,{w}
-Return
 
 :*:11::
 Gosub, _csp_line_kage
@@ -646,6 +617,7 @@ Send,^+{F14}
 Send,{w}
 Send, ^{F2}
 Send,{F1}
+send,{F3}
 _buf_CSP_line_bkflag:=
 return
 
@@ -660,6 +632,16 @@ Send,{F1}
 _buf_CSP_line_bkflag:=
 return
 
+NumpadEnter & Numpad0::
+Send,^!{F16}
+_cspflowSC("u")
+dbl:=getDoubleKeyLine()
+dbl.byKey("j",buf_CSPFlow, 1)
+Send,^+{F14}
+Send,{F1}
+Send,{w}
+_buf_CSP_line_bkflag:=
+return
 
 NumpadEnter & Numpad4::
 Send,{F16}
@@ -688,7 +670,7 @@ Send,{w}
 _buf_CSP_line_bkflag:=
 return
 
-Numpad0::
+~Numpad0::
 _cspflowSC("u")
 dbl:=getDoubleKeyLine()
 dbl.byKey("j",buf_CSPFlow, 1)
@@ -760,11 +742,6 @@ Send,{s}
 Send,{w}
 _buf_CSP_line_bkflag:=
 return
-
-+End::
-send, ^+{d}
-send,^{h}
-Return
 
 
 csp_shadow_to_gradation:
