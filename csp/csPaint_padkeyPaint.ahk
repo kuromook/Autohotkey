@@ -5,7 +5,7 @@ getDoubleKeyPaint(){
   dbl.append( new Operation("erace"   , 13,"x", 1, "!{[}", "key"))
 
   dbl.append( new Operation("get color"   , 13,"n", 1, "{F14}", "key"))
-  dbl.append( new Operation("spoit"   , 13,"j", 1, "{i}", "key"))
+  dbl.append( new Operation("spoit"   , 13,"j", 1, "{p}", "key"))
     dbl.append( new Operation("change color"   , 13,"j", 2, "!{Delete}", "key"))
   dbl.append( new Operation("make base"   , 13,"m", 1, "_csp_makeBasecolor", "sub"))
 
@@ -24,49 +24,12 @@ getDoubleKeyPaint(){
   dbl.append( new Operation("layer " , 9,"F18", 1, "_csp_make_sketch_layer" , "sub"))
   dbl.append( new Operation("layer " , 9,"F19", 1, "_csp_brushcolor" , "sub"))
 
-  ; line
-  dbl.append( new Operation("sub color"   , 4,"x", 1, "{x}", "key"))
-  dbl.append( new Operation("erace"   , 4,"x", 2, "{x}", "key"))
-  dbl.append( new Operation("Control"   , 4,"j", 1, "{p}", "key"))
-  dbl.append( new Operation("Control"   , 4,"n", 1, "{l}", "key"))
-  dbl.append( new Operation("sketch"   , 4,"m", 1, "^+{F15}", "key"))
-
-  ; liquid paint
-  dbl.append( new Operation("main color"   , 7,"i", 1, "{w}", "key"))
-  dbl.append( new Operation("fill"   , 7,"i", 2, "{6}", "key"))
-  dbl.append( new Operation("Brush"   , 7,"j", 1, "{Numpad4}", "key"))
-
-  ; liquid moisture
-  dbl.append( new Operation("main color"   , 11,"i", 1, "{w}", "key"))
-  dbl.append( new Operation("fill"   , 11,"i", 2, "{6}", "key"))
-  dbl.append( new Operation("Brush"   , 11,"j", 1, "{Numpad7}", "key"))
-
-  ; vegetation
-  dbl.append( new Operation("cloth"   , 8,"j", 1, "{F12}", "key"))
-  dbl.append( new Operation("sketch"   , 8,"m", 1, "{F11}", "key"))
-  ; texture
-  dbl.append( new Operation("texture"   ,10,"j", 1, "{0}", "key"))
-  dbl.append( new Operation("sketch"   , 10,"m", 1, "{k}", "key"))
-  ; skin
-  dbl.append( new Operation("cloth"   , 5,"j", 1, "{Numpad2}", "key"))
-  ; cloth inflate
-  dbl.append( new Operation("texture"   , 12,"j", 1, "{Numpad8}", "key"))
-
-
-  ; paint
-  dbl.append( new Operation("Line"   , 3,"j", 1, "_csp_paint_allbrush", "sub"))
+  
   ; general
-  dbl.append( new Operation("Main"   , 6,"j", 1, "{Numpad1}", "key"))
-  ; skin
-  dbl.append( new Operation("Brush"   , 2,"j", 1, "{Numpad5}", "key"))
+  dbl.append( new Operation("Main"   , 6,"j", 1, "{p}", "key"))
 
-  ; anime flow
-  dbl.append( new Operation("Marker"   , 1,"j", 1, "{Numpad3}", "key"))
-  dbl.append( new Operation("fill"   , 1,"i", 2, "{6}", "key"))
-
-  ; default action (and without flow setting)
   dbl.append( new Operation("Free"   , 0,"j", 1, "{p}", "key"))
-  dbl.append( new Operation("Brush"   , 0,"j", 2, "{j}", "key"))
+  dbl.append( new Operation("Brush"   , 0,"j", 2, "{p}", "key"))
   dbl.append( new Operation("curve thin"   , 0,"n", 2, "{z}", "key"))
   dbl.append( new Operation("curve fill"   , 1,"n", 1, "{u}", "key"))
   dbl.append( new Operation("air brush"   , 0,"m", 1, "{b}", "key"))
@@ -75,7 +38,6 @@ getDoubleKeyPaint(){
   dbl.append( new Operation("main color"   , 0,"i", 1, "{w}", "key"))
   dbl.append( new Operation("fill"   , 0,"i", 2, "{q}", "key"))
   dbl.append( new Operation("erace"   , 0,"x", 1, "_csp_erace_with_flag", "sub"))
-;  dbl.append( new Operation("sub color"   , 0,"x", 2, "_csp_swap_color", "sub"))
   dbl.append( new Operation("curve", 0,"s", 1, "_csp_paint_curve", "sub"))
   dbl.append( new Operation("confirm"   , 0,"s", 2, "_csp_paint_confirm", "sub"))
 

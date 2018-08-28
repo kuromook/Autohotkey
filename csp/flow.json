@@ -46,65 +46,6 @@
 
 	},
 	"flow":{
-
-        "anime_p":{
-            "name":"Anime",
-            "key":"a",
-            "mode":"paint",
-            "flag":1,
-            "doc":"http:www.google.com",
-            "movie":"e:\\video\\CSP\\CSP_painting_hair.avi",
-            "msg":"anime"
-            },
-		"skin_p":{
-			"name":"Skin",
-			"key":"s",
-			"mode":"paint",
-			"flag":2,
-			"doc":"http:www.google.com",
-			"movie":"e:\\video\\CSP\\CSP_painting_skin_large.avi",
-			"msg":"anime"
-			},
-        "paint_p":{
-            "name":"General Paint",
-            "key":"g",
-            "mode":"paint",
-            "flag":3,
-            "doc":"http:www.google.com",
-            "movie":"e:\\video\\CSP\\CSP_painting_skin_large.avi",
-            "msg":"paint"
-            },
-
-        "line_p":{
-            "name":"Line",
-            "key":"l",
-            "mode":"paint",
-            "flag":4,
-            "doc":"http:www.google.com",
-            "movide":"e:\\video\\CSP\\CSP_painting_nip.avi",
-            "msg":"paint"
-            },
-        "cloth_p":{
-            "name":"Cloth",
-            "key":"c",
-            "mode":"paint",
-            "flag":5,
-            "doc":"http:www.google.com",
-            "movie":"e:\\video\\CSP\\CSP_painting_sperma.avi",
-            "msg":"paint"
-            },
-        "fruid_p":{
-            "name":"Fruid",
-            "key":"f",
-            "mode":"paint",
-            "flag":7,
-            "doc":"http:www.google.com",
-            "movie":"e:\\video\\CSP\\CSP_painting_sweat.avi",
-            "msg":"paint"
-            },
-
-
-
         "dSketch_p":{
             "name":"Detail Sketch",
             "key":"d",
@@ -114,26 +55,6 @@
             "movie":"e:\\video\\CSP\\CSP_painting_sperma.avi",
             "msg":"paint"
             },
-        "moisture_p":{
-            "name":"Moisture",
-            "key":"m",
-            "mode":"paint",
-            "flag":11,
-            "doc":"http:www.google.com",
-            "movie":"e:\\video\\CSP\\CSP_painting_sperma.avi",
-            "msg":"paint"
-            },
-        "texture_p":{
-            "name":"texture",
-            "key":"t",
-            "mode":"paint",
-            "flag":12,
-            "doc":"http:www.google.com",
-            "movie":"e:\\video\\CSP\\CSP_painting_sperma.avi",
-            "msg":"paint"
-            },
-
-
         "Base_p":{
             "name":"base color",
             "key":"b",
@@ -143,22 +64,11 @@
             "movie":"e:\\video\\CSP\\CSP_painting_sperma.avi",
             "msg":"paint"
             },
-        "TextureGray_p":{
-            "name":"research",
-            "key":"e",
-            "mode":"paint",
-            "flag":10,
-            "doc":"http:www.google.com",
-            "movie":"e:\\video\\CSP\\CSP_painting_sperma.avi",
-            "msg":"paint"
-            },
-
-
         "Vegetation_p":{
-            "name":"vegetation",
-            "key":"v",
+            "name":"general",
+            "key":"a",
             "mode":"paint",
-            "flag":8,
+            "flag":6,
             "doc":"http:www.google.com",
             "movie":"e:\\video\\CSP\\CSP_painting_sperma.avi",
             "msg":"paint"
