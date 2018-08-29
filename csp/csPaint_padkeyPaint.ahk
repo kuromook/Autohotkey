@@ -3,10 +3,9 @@ getDoubleKeyPaint(){
   ; base color
   dbl.append( new Operation("main color"   , 13,"i", 1, "!{]}", "key"))
   dbl.append( new Operation("erace"   , 13,"x", 1, "!{[}", "key"))
-
   dbl.append( new Operation("get color"   , 13,"n", 1, "{F14}", "key"))
   dbl.append( new Operation("spoit"   , 13,"j", 1, "{p}", "key"))
-    dbl.append( new Operation("change color"   , 13,"j", 2, "!{Delete}", "key"))
+  dbl.append( new Operation("change color"   , 13,"j", 2, "!{Delete}", "key"))
   dbl.append( new Operation("make base"   , 13,"m", 1, "_csp_makeBasecolor", "sub"))
 
   ; detail sketch
@@ -19,10 +18,6 @@ getDoubleKeyPaint(){
   dbl.append( new Operation("Dot"   , 9,"j", 1, "_csp_pencil", "sub"))
   dbl.append( new Operation("mirror"   , 9,"m", 1, "_csp_flatpencil", "sub"))
   dbl.append( new Operation("mirror"   , 9,"m", 2, "_csp_select_sketch_layer", "sub"))
-  dbl.append( new Operation("layer " , 9,"F16", 1, "+!{F16}" , "key"))
-  dbl.append( new Operation("layer " , 9,"F17", 1, "_csp_toggle_sketch_view" , "key"))
-  dbl.append( new Operation("layer " , 9,"F18", 1, "_csp_make_sketch_layer" , "sub"))
-  dbl.append( new Operation("layer " , 9,"F19", 1, "_csp_brushcolor" , "sub"))
 
   
   ; general
@@ -227,29 +222,13 @@ _csp_paint_curve:
 send, {F5}
 Return
 
-_csp_paint_second:
-keys := dbl.byKey("s",buf_CSPFlow, 2)
-Return
-
-_csp_paint_clear:
-send, +{F17}
-Return
 
 _csp_erace_fill:
 send,{u}
 send,{x}
 return
 
-+F1::
-_createSolidFillLayer()
-Send,^{F1}
-return
 
-F13::
-Send,!{F13}
-Send,^{h}
-SoundPlay,*128
-return
 
 
 ^+F17::
@@ -327,8 +306,6 @@ else
 {
   Send,{x}
 }
-
-
 Return
 
 
@@ -357,64 +334,7 @@ _csp_set_default_subtool:
   SoundPlay,*-1
 return
 
-_csp_set_twitter_rough:
-send, ^!{F16}
-send, {w}
-send, ^+!{F1}
-send, {s}
-send, ^+!{F2}
-send,{w}
-return
 
-_csp_set_sketch_layer:
-send, ^+{F1}
-send, ^+{F2}
-return
-
-_csp_sketch_or_blur:
-if (buf_CSPDisableErace=1)
-{
-  Send,{b}
-}
-else
-{
-Send,+{F14}
-}
-return
-
-_csp_move_or_blur:
-if (buf_CSPDisableErace=1)
-{
-  Send,{5}
-}
-else
-{
-Send,{b}
-}
-return
-
-_csp_erace_with_flag:
-if (buf_CSPDisableErace=1)
-{
-Send,{s}
-}
-else
-{
-  Send,{x}
-}
-return
-
-_csp_toggle_sketch:
-if (buf_CSPtoggleSketch=1)
-{
-Send,^!+{5}
-buf_CSPtoggleSketch:=0
-}
-else
-{
-  send, ^!+{6}
-  buf_CSPtoggleSketch:=1
-}
 
 _cspflowSC("d")
 dbl:=getDoubleKeyPaint()
@@ -430,23 +350,10 @@ Gosub, _csp_clipping
 send, !{Delete}
 Return
 
-NumpadPgdn::
-send,{9}
-send,{w}
-return
-NumpadEnd::
-  send,{u}
-  send,{x}
-Return
 
 
 
 
-_csp_make_sketch_layer:
-  send,^+{F2}
-  sleep, 300
-  send,{F1}
-  return
 
 _csp_select_sketch_layer:
   send,^+!{u}
@@ -454,36 +361,6 @@ _csp_select_sketch_layer:
   send,{F1}
   return
 
-_csp_brushcolor:
-  if buf_cspsketch =1
-  {
-    send, ^+!{F7}
-    buf_cspsketch:=2
-  }
-    else if buf_cspsketch =2
-  {
-    send, ^+!{F8}
-    buf_cspsketch:=3
-  }
-    else if buf_cspsketch =3
-  {
-    send, ^+!{F9}
-    buf_cspsketch:=4
-  }
-  else if buf_cspsketch =4
-  {
-    send, {F1}
-    buf_cspsketch:=5
-  }
-  else
-  {
-    send, ^+!{F2}
-    buf_cspsketch:=1
-  }
-  sleep, 100
-  send, ^+{F5}
-  sleep, 100
-  return
 
 
 
@@ -524,6 +401,60 @@ _cspflowSC("d")
 gosub,csp_paint_flow_sc_default
 return
 
+; normal
+NumpadEnter & Numpad0::
+send, !^{F1}
+gosub,csp_paint_general
+return
+
+; normal
+NumpadEnter & Numpad1::
+send, !^{F1}
+send, ^{g}
+gosub,csp_paint_general
+return
+
+; high light
+NumpadEnter & Numpad3::
+send, !^{F4}
+send, ^{g}
+gosub, csp_paint_highlight
+return
+
+; shadow
+NumpadEnter & Numpad2::
+send, !^{F2}
+send, ^{g}
+gosub, csp_paint_highlight
+return
+
+; overlay
+NumpadEnter & Numpad4::
+send, !^{F3}
+send, ^{g}
+gosub, csp_paint_highlight
+return
+
+; deep
+NumpadEnter & Numpad5::
+send, !^{F6}
+send, ^{g}
+gosub, csp_paint_highlight
+return
+
+; high light 2
+NumpadEnter & Numpad6::
+send, !^{F5}
+send, ^{g}
+gosub, csp_paint_highlight
+return
+
+; screen
+NumpadEnter & Numpad9::
+send, !^{F7}
+send, ^{g}
+gosub, csp_paint_highlight
+return
 
 ;Mouse gesture alpha is active, then it not work. whi?
 ~XButton2::
