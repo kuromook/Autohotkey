@@ -26,7 +26,12 @@ getDoubleKeyPaint(){
 
   
   ; general
-  dbl.append( new Operation("Main"   , 6,"j", 1, "{p}", "key"))
+  dbl.append( new Operation("Main"   , 6,"x", 1, "{s}", "key"))
+  dbl.append( new Operation("erace"   , 6,"x", 2, "+!{x}", "key"))
+
+  ; highlight
+  dbl.append( new Operation("Main"   , 1,"x", 1, "{x}", "key"))
+  dbl.append( new Operation("erace"   , 1,"x", 2, "+!{x}", "key"))
 
   dbl.append( new Operation("Free"   , 0,"j", 1, "{p}", "key"))
   dbl.append( new Operation("Brush"   , 0,"j", 2, "{p}", "key"))
@@ -37,7 +42,8 @@ getDoubleKeyPaint(){
 
   dbl.append( new Operation("main color"   , 0,"i", 1, "{w}", "key"))
   dbl.append( new Operation("fill"   , 0,"i", 2, "{q}", "key"))
-  dbl.append( new Operation("erace"   , 0,"x", 1, "_csp_erace_with_flag", "sub"))
+  dbl.append( new Operation("erace"   , 0,"x", 1, "{s}", "key"))
+  dbl.append( new Operation("erace"   , 0,"x", 2, "+!{x}", "key"))
   dbl.append( new Operation("curve", 0,"s", 1, "_csp_paint_curve", "sub"))
   dbl.append( new Operation("confirm"   , 0,"s", 2, "_csp_paint_confirm", "sub"))
 
@@ -480,11 +486,6 @@ _csp_brushcolor:
   return
 
 
-NumpadDot & NumpadClear::
-csp_paint_flag:=!csp_paint_flag
-return
-
-
 
 ; change brush option
 _csp_reset_brush_option:
@@ -493,15 +494,6 @@ sleep,100
 send, +{] 10}
 return
 
-
-~Space & Numpad2::
-gosub, csp_paint_decoration_gray
-Return
-
-
-~Space & Numpad1::
-gosub, _csp_paint_vegtation
-Return
 
 
 ; flow short cut
@@ -512,135 +504,26 @@ Send,^+{F14}
 Send,{w}
 return
 
-;anime
-csp_paint_anime:
-Numpad3::
+Numpad1::
+csp_paint_general:
 _cspflowSC("a")
 gosub,csp_paint_flow_sc_default
-buf_CSPDisableErace:=1
 return
 
-;fruid
-Numpad1::
-  gosub, csp_paint_general
-return
 
 Numpad2::
-  gosub, csp_paint_cloth
-return
-
-;fruid
-Numpad4::
-  gosub, csp_paint_fruid
-Return
-
-Numpad5::
-  gosub, csp_paint_skin
-return
-
-;fruid
-Numpad7::
-  gosub, csp_paint_moisture
-Return
-
-Numpad8::
-  gosub, csp_paint_texture
-return
-
-csp_paint_fruid:
-_cspflowSC("f")
+csp_paint_highlight:
+_cspflowSC("h")
 gosub,csp_paint_flow_sc_default
-buf_CSPDisableErace:=1
-return
-
-;moisture
-
-csp_paint_moisture:
-_cspflowSC("m")
-gosub,csp_paint_flow_sc_default
-return
-
-
-
-csp_paint_general:
-_cspflowSC("g")
-gosub,csp_paint_flow_sc_default
-buf_CSPDisableErace:=1
-return
-
-
-
-;skin
-csp_paint_skin:
-_cspflowSC("s")
-gosub,csp_paint_flow_sc_default
-Return
-
-
-
-csp_paint_cloth:
-_cspflowSC("c")
-gosub,csp_paint_flow_sc_default
-buf_CSPDisableErace:=1
-return
-
-
-csp_paint_texture:
-_cspflowSC("t")
-gosub,csp_paint_flow_sc_default
-return
-
-;research
-Numpad6::
-csp_paint_research:
-_cspflowSC("e")
-gosub, csp_paint_flow_sc_default
-
 return
 
 ;detail sketch
-Numpad9::
+Numpad3::
 csp_paint_sketch:
 _cspflowSC("d")
 gosub,csp_paint_flow_sc_default
 return
 
-_csp_paint_vegtation:
-_cspflowSC("e")
-gosub,csp_paint_flow_sc_default
-return
-
-csp_paint_decoration_gray:
-_cspflowSC("v")
-gosub,csp_paint_flow_sc_default
-return
-
-
-
-Numpad0 & Up::
-work:= new workObj()
-work.work()
-return
-
-Numpad0 & Right::
-work:= new workObj()
-work.next()
-return
-
-Numpad0 & Left::
-work:= new workObj()
-work.before()
-return
-
-Numpad0 & Down::
-work:= new workObj()
-work.start()
-return
-
-;~!^+F13::RapidHotkey("_csp_sketch_pencil""_csp_line_undo",2, 0.3, 1)
-;+!F13::
-;  send,{e}
-;Return
 
 ;Mouse gesture alpha is active, then it not work. whi?
 ~XButton2::

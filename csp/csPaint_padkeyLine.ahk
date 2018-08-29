@@ -22,7 +22,7 @@
   ;Tone
   dbl.append( new Operation("Kabura", 9,"j", 1, "{p}", "key"))
   dbl.append( new Operation("Tone     ", 9,"m", 1, "{b}", "key"))
-  dbl.append( new Operation("Tone     ", 9,"m", 2, "csp_shadow_to_gradation", "sub"))
+;  dbl.append( new Operation("Tone     ", 9,"m", 2, "csp_shadow_to_gradation", "sub"))
 
   dbl.append( new Operation("Control", 9,"i", 2, "{q}", "key"))
   dbl.append( new Operation("wanderace", 9,"n", 1, "_csp_line_curveErace", "sub"))
