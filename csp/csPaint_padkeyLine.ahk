@@ -7,10 +7,10 @@
   dbl.append( new Operation("reverse "  , 16,"x", 2, "_csp_line_reverse_color", "sub"))
 
   ; Effect
-  dbl.append( new Operation("Kabura", 12,"j", 1, "{z}", "key"))
-  dbl.append( new Operation("white    ", 12,"m", 1, "_csp_line_kamiwhite", "sub"))
-  dbl.append( new Operation("white    ", 12,"i", 2, "{8}", "key"))
-  dbl.append( new Operation("reverse "  , 12,"x", 2, "_csp_line_detail", "sub"))
+  dbl.append( new Operation("Kabura", 11,"j", 1, "{z}", "key"))
+  dbl.append( new Operation("white    ", 11,"m", 1, "_csp_line_kamiwhite", "sub"))
+  dbl.append( new Operation("white    ", 11,"i", 2, "{8}", "key"))
+  dbl.append( new Operation("reverse "  , 11,"x", 2, "_csp_line_detail", "sub"))
 
     ;mask
   dbl.append( new Operation("brush   ", 10,"j", 1, "{l}", "key"))
@@ -32,7 +32,7 @@
 
     ; fukidasi
   dbl.append( new Operation("white    ", 8,"j", 1, "_csp_fukidashi_line", "sub"))
-  dbl.append( new Operation("white    ", 8,"i", 2, "{8}", "key"))
+  dbl.append( new Operation("white    ", 8,"i", 2, "{2}", "key"))
   dbl.append( new Operation("white    ", 8,"m", 1, "_csp_line_kamiwhite", "sub"))
 
 
@@ -241,7 +241,7 @@ _csp_line_white:
   send,{8}
   return
 _csp_line_kamiwhite:
-  send,{8}
+  send,{2}
   send,{s}
   send,{w}
   Return
@@ -249,6 +249,7 @@ _csp_fukidashi_line:
  send,{f}
  send,{F1}
  send,{w}
+ send,{5}
  return
 _csp_reverse_and_gradation:
  send,{F15}

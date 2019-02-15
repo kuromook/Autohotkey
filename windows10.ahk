@@ -131,7 +131,7 @@ return
     }
   return
 
-
+LWin::return
 
 RCtrl & Space::
 ExitApp
