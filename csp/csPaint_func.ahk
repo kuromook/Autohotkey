@@ -64,7 +64,7 @@ _csPaintMode(num,modeName)
   ToolTip,,,,19
   ;Gosub , _CSPMode%modeName%
   ;Gosub , _toolTipFuncCSP_SCListCommon
-  _csPaintWorkspace(num+4+3)
+  _csPaintWorkspace(num+3+3)
   return
 }
 
@@ -93,7 +93,7 @@ _csPaintWorkspace(num)
   sleep, 50
   Send,{w}
   sleep, 50
-  Send,{right}
+  ;Send,{right}
   Loop,%num%
   {
     sleep,50

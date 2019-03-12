@@ -418,7 +418,11 @@ Send,^!{F1}
 gosub, csp_line_ao
   return
 
-
+:*:15::
+Gosub, _csp_line_kage
+Send,^!{F7}
+Return
+  return
 
 
 :*:23::
@@ -434,6 +438,11 @@ Gosub, _csp_line_detail
 Send,^!{F3}
 gosub, csp_line_ao
   return
+
+:*:25::
+Gosub, _csp_line_kage
+Send,^!+{F8}
+Return
 
 
 :*:33::
@@ -451,7 +460,10 @@ Send,^!{F5}
 gosub, csp_line_ao
   return
 
-
+:*:35::
+Gosub, _csp_line_kage
+Send,^!{F9}
+  return
 
 
 
@@ -546,6 +558,7 @@ gosub, csp_gradation_nip
 Return
 
 :*:055::
+F4::
 csp_gradation_nip:
 _buf_CSP_line_gradation:="{y}"
 send,^{d}
