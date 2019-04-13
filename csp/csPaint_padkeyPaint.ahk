@@ -26,7 +26,7 @@ getDoubleKeyPaint(){
 
   ; highlight
   dbl.append( new Operation("Main"   , 1,"x", 1, "{x}", "key"))
-  dbl.append( new Operation("erace"   , 1,"x", 2, "+!{x}", "key"))
+  dbl.append( new Operation("erace"   , 1,"x", 2, "_csp_paint_highlight_swap", "sub"))
 
   dbl.append( new Operation("Free"   , 0,"j", 1, "{p}", "key"))
   dbl.append( new Operation("Brush"   , 0,"j", 2, "{p}", "key"))
@@ -175,6 +175,11 @@ dbl:=getDoubleKeyPaint()
     ctrldoubleS+=400
 
  }
+return
+
+_csp_paint_highlight_swap:
+send,+!{x}
+send,{w}
 return
 
 _csp_pencil_flag:

@@ -20,6 +20,7 @@ getDoubleKeyBase(){
     Send,{F16}
     send,{w}
     send,{g}
+    send,{F1}
 return
 
 
@@ -67,7 +68,8 @@ return
 +x::
  if A_TickCount < %ctrldouble%
  {
-  Gosub, _csp_swap_color
+   Send,{F1}
+
     ctrldouble=0
 
  }
