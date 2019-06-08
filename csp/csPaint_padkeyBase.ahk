@@ -9,7 +9,8 @@ getDoubleKeyBase(){
   ; default action (and without flow setting)
   dbl.append( new Operation("Control"   , 0,"n", 1, "{j}", "key"))
   dbl.append( new Operation("Blur"   , 0,"n", 2, "{z}", "key"))
-
+dbl.append( new Operation("Control"   , 0,"m", 1, "{F1}", "key"))
+  dbl.append( new Operation("Blur"   , 0,"m", 2, "_csPaintBaseNewlayer", "sub"))
 
   dbl.append( new Operation("layer " , 0,"F16", 1, "_csPaintFlowNewLayerColored" , "sub"))
 
@@ -17,10 +18,17 @@ getDoubleKeyBase(){
 }
 
 +m::
-    Send,{F16}
-    send,{w}
-    send,{g}
-    send,{F1}
+  if A_TickCount < %ctrldoubleM%
+   {
+      keys := dbl.byKey("m",buf_CSPFlow, 2)
+    ctrldoubleM=0
+   }
+  else
+   {
+      keys := dbl.byKey("m",buf_CSPFlow, 1)
+    ctrldoubleM=%A_TickCount%
+    ctrldoubleM+=400
+   }
 return
 
 
@@ -28,7 +36,12 @@ return
     Send,{l} 
 return
 
-
+_csPaintBaseNewlayer:
+    Send,{F16}
+    send,{w}
+    send,{g}
+    send,{F1}
+return
 
 +n::
 dbl:=getDoubleKeyBase()
