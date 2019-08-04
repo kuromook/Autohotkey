@@ -17,7 +17,7 @@
 #Include tooltip.ahk
 
 #Include %A_ScriptDir%\csp\csPaint.ahk
-#Include zbrush.ahk
+
 
 
 AppsKey::#Tab
@@ -91,7 +91,7 @@ return
 ;japanese input like mac OS
 LWin & Space::
 CapsLock & Space::
-LAlt & Space::
+;LAlt & Space::
 ;vk1Dsc07B & Space::
 Suspend,Permit
 

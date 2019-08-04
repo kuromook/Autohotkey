@@ -309,25 +309,6 @@ _transform2nd:
   }
 return
 
-
-
-^+F17::
-  if A_TickCount < %ctrldoubleST%
-  {
-    Send,{CtrlDown}{9}{CtrlUp}
-    Send,{CtrlDown}{8}{CtrlUp}
-
-     ctrldoubleST=0
-   }
-  else
-   {
-    ctrldoubleST=%A_TickCount%
-    ctrldoubleST+=400
-     Send,{CtrlDown}{F16}{CtrlUp}
-   }
-Return
-
-
 +i::
 dbl:=getDoubleKeyLine()
  if A_TickCount < %ctrldoubleI%
@@ -342,9 +323,6 @@ dbl:=getDoubleKeyLine()
     Send,{w}
  }
 return
-
-
-
 
 
 +a::
