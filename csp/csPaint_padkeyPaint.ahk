@@ -3,10 +3,9 @@ getDoubleKeyPaint(){
   ; base color
   dbl.append( new Operation("main color"   , 13,"i", 1, "!{]}", "key"))
   dbl.append( new Operation("erace"   , 13,"x", 1, "!{[}", "key"))
-
   dbl.append( new Operation("get color"   , 13,"n", 1, "{F14}", "key"))
-  dbl.append( new Operation("spoit"   , 13,"j", 1, "{i}", "key"))
-    dbl.append( new Operation("change color"   , 13,"j", 2, "!{Delete}", "key"))
+  dbl.append( new Operation("spoit"   , 13,"j", 1, "{p}", "key"))
+  dbl.append( new Operation("change color"   , 13,"j", 2, "!{Delete}", "key"))
   dbl.append( new Operation("make base"   , 13,"m", 1, "_csp_makeBasecolor", "sub"))
 
   ; detail sketch
@@ -19,54 +18,18 @@ getDoubleKeyPaint(){
   dbl.append( new Operation("Dot"   , 9,"j", 1, "_csp_pencil", "sub"))
   dbl.append( new Operation("mirror"   , 9,"m", 1, "_csp_flatpencil", "sub"))
   dbl.append( new Operation("mirror"   , 9,"m", 2, "_csp_select_sketch_layer", "sub"))
-  dbl.append( new Operation("layer " , 9,"F16", 1, "+!{F16}" , "key"))
-  dbl.append( new Operation("layer " , 9,"F17", 1, "_csp_toggle_sketch_view" , "key"))
-  dbl.append( new Operation("layer " , 9,"F18", 1, "_csp_make_sketch_layer" , "sub"))
-  dbl.append( new Operation("layer " , 9,"F19", 1, "_csp_brushcolor" , "sub"))
 
-  ; line
-  dbl.append( new Operation("sub color"   , 4,"x", 1, "{x}", "key"))
-  dbl.append( new Operation("erace"   , 4,"x", 2, "{x}", "key"))
-  dbl.append( new Operation("Control"   , 4,"j", 1, "{p}", "key"))
-  dbl.append( new Operation("Control"   , 4,"n", 1, "{l}", "key"))
-  dbl.append( new Operation("sketch"   , 4,"m", 1, "^+{F15}", "key"))
-
-  ; liquid paint
-  dbl.append( new Operation("main color"   , 7,"i", 1, "{w}", "key"))
-  dbl.append( new Operation("fill"   , 7,"i", 2, "{6}", "key"))
-  dbl.append( new Operation("Brush"   , 7,"j", 1, "{Numpad4}", "key"))
-
-  ; liquid moisture
-  dbl.append( new Operation("main color"   , 11,"i", 1, "{w}", "key"))
-  dbl.append( new Operation("fill"   , 11,"i", 2, "{6}", "key"))
-  dbl.append( new Operation("Brush"   , 11,"j", 1, "{Numpad7}", "key"))
-
-  ; vegetation
-  dbl.append( new Operation("cloth"   , 8,"j", 1, "{F12}", "key"))
-  dbl.append( new Operation("sketch"   , 8,"m", 1, "{F11}", "key"))
-  ; texture
-  dbl.append( new Operation("texture"   ,10,"j", 1, "{0}", "key"))
-  dbl.append( new Operation("sketch"   , 10,"m", 1, "{k}", "key"))
-  ; skin
-  dbl.append( new Operation("cloth"   , 5,"j", 1, "{Numpad2}", "key"))
-  ; cloth inflate
-  dbl.append( new Operation("texture"   , 12,"j", 1, "{Numpad8}", "key"))
-
-
-  ; paint
-  dbl.append( new Operation("Line"   , 3,"j", 1, "_csp_paint_allbrush", "sub"))
+  
   ; general
-  dbl.append( new Operation("Main"   , 6,"j", 1, "{Numpad1}", "key"))
-  ; skin
-  dbl.append( new Operation("Brush"   , 2,"j", 1, "{Numpad5}", "key"))
+  dbl.append( new Operation("Main"   , 6,"x", 1, "{s}", "key"))
+  dbl.append( new Operation("erace"   , 6,"x", 2, "+!{x}", "key"))
 
-  ; anime flow
-  dbl.append( new Operation("Marker"   , 1,"j", 1, "{Numpad3}", "key"))
-  dbl.append( new Operation("fill"   , 1,"i", 2, "{6}", "key"))
+  ; highlight
+  dbl.append( new Operation("Main"   , 1,"x", 1, "{x}", "key"))
+  dbl.append( new Operation("erace"   , 1,"x", 2, "_csp_paint_highlight_swap", "sub"))
 
-  ; default action (and without flow setting)
   dbl.append( new Operation("Free"   , 0,"j", 1, "{p}", "key"))
-  dbl.append( new Operation("Brush"   , 0,"j", 2, "{j}", "key"))
+  dbl.append( new Operation("Brush"   , 0,"j", 2, "{p}", "key"))
   dbl.append( new Operation("curve thin"   , 0,"n", 2, "{z}", "key"))
   dbl.append( new Operation("curve fill"   , 1,"n", 1, "{u}", "key"))
   dbl.append( new Operation("air brush"   , 0,"m", 1, "{b}", "key"))
@@ -74,8 +37,8 @@ getDoubleKeyPaint(){
 
   dbl.append( new Operation("main color"   , 0,"i", 1, "{w}", "key"))
   dbl.append( new Operation("fill"   , 0,"i", 2, "{q}", "key"))
-  dbl.append( new Operation("erace"   , 0,"x", 1, "_csp_erace_with_flag", "sub"))
-;  dbl.append( new Operation("sub color"   , 0,"x", 2, "_csp_swap_color", "sub"))
+  dbl.append( new Operation("erace"   , 0,"x", 1, "{s}", "key"))
+  dbl.append( new Operation("erace"   , 0,"x", 2, "+!{x}", "key"))
   dbl.append( new Operation("curve", 0,"s", 1, "_csp_paint_curve", "sub"))
   dbl.append( new Operation("confirm"   , 0,"s", 2, "_csp_paint_confirm", "sub"))
 
@@ -214,14 +177,10 @@ dbl:=getDoubleKeyPaint()
  }
 return
 
-;~!F14::RapidHotkey("_csp_paint_curve""_csp_paint_second""_csp_paint_confirm",1, 0.22 , 1)
-
-~!+F14::RapidHotkey("_csp_paint_undo""_csp_line_curveErace""_csp_line_undo",2, 0.3, 1)
-_csp_paint_undo:
-send,{i}
-Return
-
-
+_csp_paint_highlight_swap:
+send,+!{x}
+send,{w}
+return
 
 _csp_pencil_flag:
 if(!pencil_flag)
@@ -268,29 +227,13 @@ _csp_paint_curve:
 send, {F5}
 Return
 
-_csp_paint_second:
-keys := dbl.byKey("s",buf_CSPFlow, 2)
-Return
-
-_csp_paint_clear:
-send, +{F17}
-Return
 
 _csp_erace_fill:
 send,{u}
 send,{x}
 return
 
-+F1::
-_createSolidFillLayer()
-Send,^{F1}
-return
 
-F13::
-Send,!{F13}
-Send,^{h}
-SoundPlay,*128
-return
 
 
 ^+F17::
@@ -368,8 +311,6 @@ else
 {
   Send,{x}
 }
-
-
 Return
 
 
@@ -398,64 +339,7 @@ _csp_set_default_subtool:
   SoundPlay,*-1
 return
 
-_csp_set_twitter_rough:
-send, ^!{F16}
-send, {w}
-send, ^+!{F1}
-send, {s}
-send, ^+!{F2}
-send,{w}
-return
 
-_csp_set_sketch_layer:
-send, ^+{F1}
-send, ^+{F2}
-return
-
-_csp_sketch_or_blur:
-if (buf_CSPDisableErace=1)
-{
-  Send,{b}
-}
-else
-{
-Send,+{F14}
-}
-return
-
-_csp_move_or_blur:
-if (buf_CSPDisableErace=1)
-{
-  Send,{5}
-}
-else
-{
-Send,{b}
-}
-return
-
-_csp_erace_with_flag:
-if (buf_CSPDisableErace=1)
-{
-Send,{s}
-}
-else
-{
-  Send,{x}
-}
-return
-
-_csp_toggle_sketch:
-if (buf_CSPtoggleSketch=1)
-{
-Send,^!+{5}
-buf_CSPtoggleSketch:=0
-}
-else
-{
-  send, ^!+{6}
-  buf_CSPtoggleSketch:=1
-}
 
 _cspflowSC("d")
 dbl:=getDoubleKeyPaint()
@@ -471,23 +355,10 @@ Gosub, _csp_clipping
 send, !{Delete}
 Return
 
-NumpadPgdn::
-send,{9}
-send,{w}
-return
-NumpadEnd::
-  send,{u}
-  send,{x}
-Return
 
 
 
 
-_csp_make_sketch_layer:
-  send,^+{F2}
-  sleep, 300
-  send,{F1}
-  return
 
 _csp_select_sketch_layer:
   send,^+!{u}
@@ -495,41 +366,6 @@ _csp_select_sketch_layer:
   send,{F1}
   return
 
-_csp_brushcolor:
-  if buf_cspsketch =1
-  {
-    send, ^+!{F7}
-    buf_cspsketch:=2
-  }
-    else if buf_cspsketch =2
-  {
-    send, ^+!{F8}
-    buf_cspsketch:=3
-  }
-    else if buf_cspsketch =3
-  {
-    send, ^+!{F9}
-    buf_cspsketch:=4
-  }
-  else if buf_cspsketch =4
-  {
-    send, {F1}
-    buf_cspsketch:=5
-  }
-  else
-  {
-    send, ^+!{F2}
-    buf_cspsketch:=1
-  }
-  sleep, 100
-  send, ^+{F5}
-  sleep, 100
-  return
-
-
-NumpadDot & NumpadClear::
-csp_paint_flag:=!csp_paint_flag
-return
 
 
 
@@ -541,15 +377,6 @@ send, +{] 10}
 return
 
 
-~Space & Numpad2::
-gosub, csp_paint_decoration_gray
-Return
-
-
-~Space & Numpad1::
-gosub, _csp_paint_vegtation
-Return
-
 
 ; flow short cut
 csp_paint_flow_sc_default:
@@ -559,135 +386,80 @@ Send,^+{F14}
 Send,{w}
 return
 
-;anime
-csp_paint_anime:
-Numpad3::
+Numpad1::
+csp_paint_general:
 _cspflowSC("a")
 gosub,csp_paint_flow_sc_default
-buf_CSPDisableErace:=1
 return
 
-;fruid
-Numpad1::
-  gosub, csp_paint_general
-return
 
 Numpad2::
-  gosub, csp_paint_cloth
-return
-
-;fruid
-Numpad4::
-  gosub, csp_paint_fruid
-Return
-
-Numpad5::
-  gosub, csp_paint_skin
-return
-
-;fruid
-Numpad7::
-  gosub, csp_paint_moisture
-Return
-
-Numpad8::
-  gosub, csp_paint_texture
-return
-
-csp_paint_fruid:
-_cspflowSC("f")
+csp_paint_highlight:
+_cspflowSC("h")
 gosub,csp_paint_flow_sc_default
-buf_CSPDisableErace:=1
-return
-
-;moisture
-
-csp_paint_moisture:
-_cspflowSC("m")
-gosub,csp_paint_flow_sc_default
-return
-
-
-
-csp_paint_general:
-_cspflowSC("g")
-gosub,csp_paint_flow_sc_default
-buf_CSPDisableErace:=1
-return
-
-
-
-;skin
-csp_paint_skin:
-_cspflowSC("s")
-gosub,csp_paint_flow_sc_default
-Return
-
-
-
-csp_paint_cloth:
-_cspflowSC("c")
-gosub,csp_paint_flow_sc_default
-buf_CSPDisableErace:=1
-return
-
-
-csp_paint_texture:
-_cspflowSC("t")
-gosub,csp_paint_flow_sc_default
-return
-
-;research
-Numpad6::
-csp_paint_research:
-_cspflowSC("e")
-gosub, csp_paint_flow_sc_default
-
 return
 
 ;detail sketch
-Numpad9::
+Numpad3::
 csp_paint_sketch:
 _cspflowSC("d")
 gosub,csp_paint_flow_sc_default
 return
 
-_csp_paint_vegtation:
-_cspflowSC("e")
-gosub,csp_paint_flow_sc_default
+; normal
+NumpadEnter & Numpad0::
+send, !^{F1}
+gosub,csp_paint_general
 return
 
-csp_paint_decoration_gray:
-_cspflowSC("v")
-gosub,csp_paint_flow_sc_default
+; normal
+NumpadEnter & Numpad1::
+send, !^{F1}
+send, ^{g}
+gosub,csp_paint_general
 return
 
-
-
-Numpad0 & Up::
-work:= new workObj()
-work.work()
+; high light
+NumpadEnter & Numpad3::
+send, !^{F4}
+send, ^{g}
+gosub, csp_paint_highlight
 return
 
-Numpad0 & Right::
-work:= new workObj()
-work.next()
+; shadow
+NumpadEnter & Numpad2::
+send, !^{F2}
+send, ^{g}
+gosub, csp_paint_highlight
 return
 
-Numpad0 & Left::
-work:= new workObj()
-work.before()
+; overlay
+NumpadEnter & Numpad4::
+send, !^{F3}
+send, ^{g}
+gosub, csp_paint_highlight
 return
 
-Numpad0 & Down::
-work:= new workObj()
-work.start()
+; deep
+NumpadEnter & Numpad5::
+send, !^{F6}
+send, ^{g}
+gosub, csp_paint_highlight
 return
 
-;~!^+F13::RapidHotkey("_csp_sketch_pencil""_csp_line_undo",2, 0.3, 1)
-;+!F13::
-;  send,{e}
-;Return
+; high light 2
+NumpadEnter & Numpad6::
+send, !^{F5}
+send, ^{g}
+gosub, csp_paint_highlight
+return
+
+; screen
+NumpadEnter & Numpad9::
+send, !^{F7}
+send, ^{g}
+gosub, csp_paint_highlight
+return
 
 ;Mouse gesture alpha is active, then it not work. whi?
 ~XButton2::
