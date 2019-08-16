@@ -19,11 +19,7 @@
 #Include %A_ScriptDir%\csp\csPaint.ahk
 
 
-
 AppsKey::#Tab
-
-
-#F1::  Winset, Alwaysontop, , A
 
 ;CapsLock::Ctrl
 *CapsLock::
@@ -110,26 +106,6 @@ send,^+{y}
 return
 
 
-;modifier key reset
-+^#F19::
-+!^#F19::
-  Suspend,Permit
-  Send, {CtrlUp}
-  Send, {AltUp}
-  Send, {ShiftUp}
-  Send, {LWinUp}
-  Send, {RWinUp}
-  return
-
-+^#F18::
-+!^#F18::
-    Suspend,Permit
-    Loop,20
-    {
-      CoordMode, ToolTip,Screen
-      ToolTip,,,,%A_Index%
-    }
-  return
 
 LWin::return
 
