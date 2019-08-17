@@ -166,12 +166,12 @@ else
 return
 
 
-;~XButton2::RapidHotkey("_csp_line_pen""_csp_rotate",2, 1)
 ;~XButton2::
 _csp_line_pen:
 send,{F3}
   send,{w}
 return
+
 ~Xbutton2::
 _csp_line_rotate:
 if A_TickCount < %ctrldoubleTX%

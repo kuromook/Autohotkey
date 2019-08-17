@@ -2,9 +2,6 @@
 #Include %A_ScriptDir%\_Struct\_Struct.ahk
 #Include %A_ScriptDir%\_Struct\Struct.ahk
 #Include %A_ScriptDir%\AutoHotkey-JSON\JSON.ahk
-#Include %A_ScriptDir%\Lib\array.ahk
-#Include %A_ScriptDir%\Lib\rapidkey.ahk
-#Include %A_ScriptDir%\Lib\varexist.ahk
 #Include <remoteBuf>
 
 #Include %A_ScriptDir%\TT\TT.ahk
@@ -44,14 +41,18 @@ return
 #lbutton::
 Return
 
-;-----------------------misc-------------------------------------------------
+;kill windows key
+LWin::return
 
+;-----------------------misc-------------------------------------------------
+;date string
 #+d::
 ;:R*?:datestr::
 FormatTime, CurrentDateTime,, yyyy/MM/dd
 SendInput %CurrentDateTime%
 return
 
+;time string
 #+t::
 ;:R*?:datestr::
 FormatTime, CurrentDateTime,, hh:mm
@@ -91,7 +92,6 @@ CapsLock & Space::
 ;LAlt & Space::
 ;vk1Dsc07B & Space::
 Suspend,Permit
-
 Send !{``}
 ;Send,{vkF3sc029}
 return
@@ -102,13 +102,7 @@ AppsKey & Space::
 Suspend
 return
 
-Pause::
-send,^+{y}
-return
-
-
-LWin::return
-
+;quit ahk
 RCtrl & Space::
 ExitApp
 Return
