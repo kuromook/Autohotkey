@@ -1,10 +1,6 @@
 # Autohotkey
 
-#### 要ライブラリ
-IME (https://github.com/karakaram/alt-ime-ahk) . 
-TT (https://github.com/HotKeyIt/TT) . 
-_struct(https://github.com/HotKeyIt/_Struct) . 
-Autohotkey-json  (https://github.com/cocobelgica/AutoHotkey-JSON) . 
+
   
 windowsの操作をラップします　ほとんどクリスタ用  
 + windows10.ahk windows 操作のラップ（ほとんどの人が関心ありそうなやつ)
@@ -13,7 +9,13 @@ windowsの操作をラップします　ほとんどクリスタ用
 + csp クリスタの機能強化 (整理できてませんのであくまで解説・公開のみ)
 
 
-### clip studio paint mode/flow概要
+### clip studio paint mode/flow概要(csp以下)
+#### 要ライブラリ
+IME (https://github.com/karakaram/alt-ime-ahk) . 
+TT (https://github.com/HotKeyIt/TT) . 
+_struct(https://github.com/HotKeyIt/_Struct) . 
+Autohotkey-json  (https://github.com/cocobelgica/AutoHotkey-JSON) . 
+
 #### 作成の経緯
 クリスタの機能として、ワークスペースがあります  
 ワークスペースは、各ワークスペースごとにショートカットやウィンドウレイアウトが保存できます  
