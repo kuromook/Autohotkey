@@ -42,17 +42,6 @@ return (WinActive("CLIP STUDIO PAINT") or WinActive("ahk_class 742DEA58-ED6B-440
 #If csPaintWindows() and (buf_CSPMode == 8) and !(IME_IsON(WinExist("A")))
 #Include %A_ScriptDir%\csp\csPaint_padkeyRough.ahk
 
-
-#If csPaintWindows() and (buf_CSPMode == 7) and !(IME_IsON(WinExist("A")))
-#Include %A_ScriptDir%\csp\csPaint_padkeyStoryboard.ahk
-
-
-#If csPaintWindows() and (buf_CSPMode == 7) and (IME_IsON(WinExist("A")))
-#IncludeAgain %A_ScriptDir%\csp\csPaint_textShortInput.ahk
-#IncludeAgain %A_ScriptDir%\csp\csPaint_textpropertyShortInput.ahk
-#Include %A_ScriptDir%\csp\csPaint_speeddialStoryboard.ahk
-
-
 #If csPaintWindows() and (buf_CSPMode == 3) and !(IME_IsON(WinExist("A")))
 #Include %A_ScriptDir%\csp\csPaint_padkeyBase.ahk
 #Include %A_ScriptDir%\csp\csPaint_renameBase.ahk
