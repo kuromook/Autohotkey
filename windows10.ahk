@@ -10,21 +10,18 @@
 #Include %A_ScriptDir%\TT\TT.ahk
 #Include %A_ScriptDir%\IME\IME.ahk
 
-
 #Include %A_ScriptDir%
-#Include maclike.ahk
 #Include app.ahk
-#Include tooltip.ahk
 
 #Include %A_ScriptDir%\csp\csPaint.ahk
-#Include zbrush.ahk
 
 
 AppsKey::#Tab
 
-
 #F1::  Winset, Alwaysontop, , A
 
+
+;-----------------------disable winkey/capslock-------------------------------------------------
 ;CapsLock::Ctrl
 *CapsLock::
   SetKeyDelay -1
@@ -35,7 +32,6 @@ return
   SetKeyDelay -1
   Send {Blind}{Ctrl Up}
 return
-;snap shot to clip board
 
 +CapsLock::
 return
@@ -48,6 +44,8 @@ Return
 return
 #lbutton::
 Return
+
+;-----------------------misc-------------------------------------------------
 
 #+d::
 ;:R*?:datestr::
@@ -108,29 +106,6 @@ return
 Pause::
 send,^+{y}
 return
-
-
-;modifier key reset
-+^#F19::
-+!^#F19::
-  Suspend,Permit
-  Send, {CtrlUp}
-  Send, {AltUp}
-  Send, {ShiftUp}
-  Send, {LWinUp}
-  Send, {RWinUp}
-  return
-
-+^#F18::
-+!^#F18::
-    Suspend,Permit
-    Loop,20
-    {
-      CoordMode, ToolTip,Screen
-      ToolTip,,,,%A_Index%
-    }
-  return
-
 
 
 RCtrl & Space::
