@@ -6,7 +6,7 @@ Suspend,Permit
 if(IME_IsON(WinExist("A")) ){
  IME_ON(WinExist("A"), False)
 }
-Input,InputChar,C I L1 T2,{Esc},q,b,k,l,p,a,m,g ;second keys
+Input,InputChar,C I L1 T2,{Esc},q,b,k,l,p,m ;second keys
 if ErrorLevel=Match
 {
       if InputChar=k                   ;actions
@@ -29,20 +29,6 @@ if ErrorLevel=Match
       _csPaintMode(3,"Paint")
       buf_CSPMode := 10
       _cspflowSC("a")
-      dbl:=getDoubleKeyPaint()
-      dbl.byKey("j",buf_CSPFlow, 1)
-      Send,^+{F14}
-      Send,{w}
-      SetNumLockState ,On
-      buf_CSPDisableErace:=1
-    }
-    Else
-      if InputChar=a                   ;actions
-    {
-      ToolTip,,,,12
-      _csPaintMode(3,"Paint")
-      buf_CSPMode := 10
-      _cspflowSC("g")
       dbl:=getDoubleKeyPaint()
       dbl.byKey("j",buf_CSPFlow, 1)
       Send,^+{F14}

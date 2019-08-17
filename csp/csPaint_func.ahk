@@ -64,7 +64,7 @@ _csPaintMode(num,modeName)
   ToolTip,,,,19
   ;Gosub , _CSPMode%modeName%
   ;Gosub , _toolTipFuncCSP_SCListCommon
-  _csPaintWorkspace(num+4+3)
+  _csPaintWorkspace(num+3+3)
   return
 }
 
@@ -83,19 +83,7 @@ _csPaintFlow(flow)
 }
 
 
-_csPaintWork(work, workName)
-{
-  CoordMode, ToolTip,Screen
-  ToolTip,,,,14
-  return
-}
 
-
-_csPaintGroup(groupName)
-{
-  Gosub , _CSPGroup%groupName%
-  return
-}
 
 
 _csPaintWorkspace(num)
@@ -105,7 +93,7 @@ _csPaintWorkspace(num)
   sleep, 50
   Send,{w}
   sleep, 50
-  Send,{right}
+  ;Send,{right}
   Loop,%num%
   {
     sleep,50
@@ -284,59 +272,6 @@ getFlowObjByJson(){
   return flowObj
 }
 
-getFlowObj(){
-    ttpaintmsg:="1 .F16 : mask layer`n2 base paint`n4 .F17 : paint`n5 High light`n`n<a click1>movie</a>`n<a click2>Document</a>"
-    ttonomatpeiamsg:="1 .F16 : convert`n`n<a click1>movie</a>`n<a click2>Document</a>"
-    tteroticmsg:="1 .F16 : tool 1`n`n<a click1>movie</a>`n<a click2>Document</a>"
-    ttimportmsg:="1 .F16 : import 1`n`n<a click1>movie</a>`n<a click2>Document</a>"
-    ttlinemsg:="1 .F16 : line 1`n`n<a click1>movie</a>`n<a click2>Document</a>"
-
-    flowObj:= new FlowObj()
-    flowObj.append(new Flow("Skin","s","paint",1,"http:www.google.com","e:\video\CSP\CSP_painting_skin_large.avi",ttpaintmsg))
-    flowObj.append(new Flow("Oral","o","paint",2,"http:www.yahoo.com","e:\video\CSP\CSP_painting_hair.avi",ttpaintmsg))
-    flowObj.append(new Flow("Nip","n","paint",3,"http:www.google.com","e:\video\CSP\CSP_painting_nip.avi",ttpaintmsg))
-    flowObj.append(new Flow("Penis","p","paint",4,"http:www.yahoo.com","e:\video\CSP\CSP_painting_hair.avi",ttpaintmsg))
-    flowObj.append(new Flow("Vagina","v","paint",5,"http:www.google.com","e:\video\CSP\CSP_painting_sperma.avi",ttpaintmsg))
-    flowObj.append(new Flow("Teeth","t","paint",6,"http:www.yahoo.com","e:\video\CSP\CSP_painting_hair.avi",ttpaintmsg))
-    flowObj.append(new Flow("Water","w","paint",7,"http:www.google.com","e:\video\CSP\CSP_painting_sweat.avi",ttpaintmsg))
-    flowObj.append(new Flow("Milk","m","paint",8,"http:www.yahoo.com","e:\video\CSP\CSP_painting_hair.avi",ttpaintmsg))
-    flowObj.append(new Flow("Juice","j","paint",9,"http:www.google.com","e:\video\CSP\CSP_painting_sperma.avi",ttpaintmsg))
-    flowObj.append(new Flow("Hot","h","paint",10,"http:www.yahoo.com","e:\video\CSP\CSP_painting_hair.avi",ttpaintmsg))
-
-    flowObj.append(new Flow("Hair","h","gray",1,"http:www.google.com","e:\video\CSP\CSP_painting_hair.avi",ttpaintmsg))
-    flowObj.append(new Flow("Pupil","p","gray",2,"http:www.yahoo.com","e:\video\CSP\CSP_painting_hair.avi",ttpaintmsg))
-    flowObj.append(new Flow("Cloth","c","gray",3,"http:www.google.com","e:\video\CSP\CSP_painting_cloth.avi",ttpaintmsg))
-    flowObj.append(new Flow("Gem","g","gray",4,"http:www.yahoo.com","e:\video\CSP\CSP_painting_accecery.avi",ttpaintmsg))
-    flowObj.append(new Flow("Lash","l","gray",5,"http:www.google.com","e:\video\CSP\CSP_painting_lash.avi",ttpaintmsg))
-    flowObj.append(new Flow("Eye","e","gray",6,"http:www.google.com","e:\video\CSP\CSP_painting_sperma.avi",ttpaintmsg))
-
-    flowObj.append(new Flow("male","m","lineart",1,"http:www.google.com","e:\video\CSP\CSP_line_face.avi",ttlinemsg))
-    flowObj.append(new Flow("female","f","lineart",2,"http:www.yahoo.com","e:\video\CSP\CSP_line_hair.avi",ttlinemsg))
-    flowObj.append(new Flow("brush","b","lineart",3,"http:www.google.com","e:\video\CSP\CSP_line_lash.avi",ttlinemsg))
-
-    flowObj.append(new Flow("Wisper","w","onomatopoeia",1,"http:www.google.com","e:\video\CSP\CSP_line_face.avi",ttonomatpeiamsg))
-    flowObj.append(new Flow("Viblation","v","onomatopoeia",2,"http:www.yahoo.com","e:\video\CSP\CSP_line_hair.avi",ttonomatpeiamsg))
-    flowObj.append(new Flow("Click","c","onomatopoeia",3,"http:www.google.com","e:\video\CSP\CSP_line_lash.avi",ttonomatpeiamsg))
-    flowObj.append(new Flow("Slap","s","onomatopoeia",4,"http:www.yahoo.com","e:\video\CSP\CSP_line_hair.avi",ttonomatpeiamsg))
-    flowObj.append(new Flow("Tap","t","onomatopoeia",5,"http:www.google.com","e:\video\CSP\CSP_line_face.avi",ttonomatpeiamsg))
-    flowObj.append(new Flow("haha","h","onomatopoeia",6,"http:www.google.com","e:\video\CSP\CSP_line_face.avi",ttonomatpeiamsg))
-
-    flowObj.append(new Flow("Nip","n","erotic",1,"http:www.google.com","e:\video\CSP\CSP_line_face.avi",tteroticmsg))
-    flowObj.append(new Flow("Lip","l","erotic",2,"http:www.yahoo.com","e:\video\CSP\CSP_line_hair.avi",tteroticmsg))
-    flowObj.append(new Flow("Penis","p","erotic",3,"http:www.google.com","e:\video\CSP\CSP_line_lash.avi",tteroticmsg))
-    flowObj.append(new Flow("Vagina","v","erotic",4,"http:www.yahoo.com","e:\video\CSP\CSP_line_hair.avi",tteroticmsg))
-    flowObj.append(new Flow("BackEffect","b","erotic",5,"http:www.yahoo.com","e:\video\CSP\CSP_line_hair.avi",tteroticmsg))
-    flowObj.append(new Flow("Sigh","s","erotic",6,"http:www.yahoo.com","e:\video\CSP\CSP_line_hair.avi",tteroticmsg))
-    flowObj.append(new Flow("Eye","e","erotic",7,"http:www.yahoo.com","e:\video\CSP\CSP_line_hair.avi",tteroticmsg))
-
-    flowObj.append(new Flow("Lineart","l","dustpan",1,"http:www.google.com","e:\video\CSP\CSP_line_face.avi",ttimportmsg))
-    flowObj.append(new Flow("Background","b","dustpan",2,"http:www.yahoo.com","e:\video\CSP\CSP_line_hair.avi",ttimportmsg))
-    flowObj.append(new Flow("Model","m","dustpan",3,"http:www.google.com","e:\video\CSP\CSP_line_lash.avi",ttimportmsg))
-    flowObj.append(new Flow("Sketch","s","dustpan",4,"http:www.yahoo.com","e:\video\CSP\CSP_line_hair.avi",ttimportmsg))
-
-
-    return flowObj
-}
 
 nextFlow(InputChar){
     OutputDebug, reached nextFlow func %InputChar%

@@ -20,7 +20,6 @@ AppsKey::#Tab
 
 #F1::  Winset, Alwaysontop, , A
 
-
 ;-----------------------disable winkey/capslock-------------------------------------------------
 ;CapsLock::Ctrl
 *CapsLock::
@@ -89,7 +88,7 @@ return
 ;japanese input like mac OS
 LWin & Space::
 CapsLock & Space::
-LAlt & Space::
+;LAlt & Space::
 ;vk1Dsc07B & Space::
 Suspend,Permit
 
@@ -107,6 +106,8 @@ Pause::
 send,^+{y}
 return
 
+
+LWin::return
 
 RCtrl & Space::
 ExitApp

@@ -18,5 +18,4 @@ return
 #c::
 Send,{AltDown}{w}{AltUp}
 return
-
 #IfWinActive
