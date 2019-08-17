@@ -1,10 +1,10 @@
 # Autohotkey
 
 #### 要ライブラリ
-IME  
-TT  
-Autohotkey-json  
-array  
+IME (https://github.com/karakaram/alt-ime-ahk) . 
+TT (https://github.com/HotKeyIt/TT) . 
+_struct(https://github.com/HotKeyIt/_Struct) . 
+Autohotkey-json  (https://github.com/cocobelgica/AutoHotkey-JSON) . 
   
 windowsの操作をラップします　ほとんどクリスタ用  
 + windows10.ahk windows 操作のラップ（ほとんどの人が関心ありそうなやつ)
